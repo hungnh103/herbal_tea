@@ -1,5 +1,4 @@
 <?php
-// session_start();
 $data = "";
 if(isset($_POST['ok'])){
   $u = $p = "";
@@ -19,11 +18,8 @@ if(isset($_POST['ok'])){
     $_SESSION['name'] = "admin";
     $_SESSION['pass'] = "123";
     $_SESSION['level'] = "3";
-    // header("location:http://localhost/www/herbal_tea/");
-    // exit();
     redirect("http://localhost/www/herbal_tea/");
   }
 }
 
-// require("views/sessions/new.php");
 loadview("sessions/new", $data);

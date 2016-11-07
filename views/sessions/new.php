@@ -1,20 +1,19 @@
 <?php
-// require("views/layouts/header.php");
 loadview("layouts/header");
 ?>
 <form action="index.php?controller=session&action=new" method="POST">
   <table>
     <tr>
       <td>Username</td>
-      <td><input type='text' name='txtname' /></td>
+      <td><input type='text' name='txtname' class='form-control' /></td>
     </tr>
     <tr>
       <td>Password</td>
-      <td><input type='password' name='txtpass' /></td>
+      <td><input type='password' name='txtpass' class='form-control' /></td>
     </tr>
     <tr>
       <td></td>
-      <td><input type='submit' name="ok" /></td>
+      <td><input type='submit' name="ok" class='btn btn-info' /></td>
     </tr>
     <tr>
       <td></td>
@@ -29,6 +28,6 @@ if(isset($data['err'])){
     echo "$value<br />";
   }
 }
-// require("views/layouts/footer.php");
+
 loadview("layouts/footer");
 ?>
