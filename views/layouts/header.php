@@ -6,7 +6,8 @@
     <title>Herbal Tea</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="assets/stylesheets/bootstrap.min.css" />
-    <link rel="stylesheet" href="" />
+    <link rel="stylesheet" href="assets/stylesheets/custom.css" />
+    <!-- <link rel="stylesheet" href="assets/stylesheets/reset.css" /> -->
   </head>
   <body>
     <header>

@@ -8,6 +8,5 @@ if(isset($_GET['controller'])){
     case "admin/user": require("controllers/admin/user/user.php"); break;
   }
 }else{
-  // require("views/static_pages/home.php");
   loadview("static_pages/home");
 }
