@@ -1,3 +1,6 @@
+/*****************************/
+/********* UNIVERSAL *********/
+/*****************************/
 *{
   margin: 0;
   padding: 0;
@@ -5,4 +8,438 @@
 
 ul{
   list-style: none;
+}
+
+body{
+  background-image: url(../images/system/background.gif);
+  font-size: small;
+}
+
+.clr{
+  clear: both;
+}
+
+a{
+  text-decoration: none;
+}
+
+a:hover{
+  text-decoration: none;
+}
+
+#website{
+  background-color: #fff;
+  width: 1040px;
+  margin: auto;
+}
+
+/*****************************/
+/************ TOP ************/
+/*****************************/
+#top{
+  height: 35px;
+  width: 1000px;
+  margin: auto;
+  background: #EFEFEF;
+}
+
+#top_left{
+  height: 35px;
+  width: 500px;
+  margin-left: 10px;
+  float: left;
+}
+
+#top_left ul li{
+  height: 35px;
+  line-height: 35px;
+  float: left;
+  padding: 0 10px 0 26px;
+}
+
+#email{
+  background: url(../images/system/email.png) no-repeat 0 10px;
+}
+
+#hotline{
+  background: url(../images/system/hotline.png) no-repeat 0 5px;
+}
+
+#top_right{
+  float: right;
+  margin-right: 10px;
+}
+
+#top_right ul li{
+  height: 35px;
+  line-height: 35px;
+  float: left;
+}
+
+#signup{
+  background: url(../images/system/signup.png) no-repeat 0 7px;
+  padding: 0 0 0 30px;
+}
+
+#login{
+  background: url(../images/system/login.png) no-repeat 0 7px;
+  padding: 0 0 0 22px;
+}
+
+#vertical_slash{
+  margin: 0 12px;
+}
+
+/*****************************/
+/********** HEADER ***********/
+/*****************************/
+#header{
+  width: 1000px;
+  margin: auto;
+  height: 180px;
+  position: relative;
+}
+
+#logo{
+  width: 150px;
+  height: 150px;
+  background: url(../images/system/logo.jpg) no-repeat;
+  position: absolute;
+  left: 30px;
+  top: 14px;
+}
+
+#search{
+  position: absolute;
+  position: relative;
+  left: 260px;
+  top: 70px;
+  width: 370px;
+}
+
+#search input[type=submit]{
+  position: absolute;
+  top: 0;
+  right: -68px;
+  height: 34px;
+  color: #fff;
+  background: #05B2E9;
+  border: none;
+  border-radius: 5px;
+  padding: 0 4px;
+  line-height: 34px;
+  font-weight: bold;
+}
+
+#cart{
+  position: absolute;
+  top: 40px;
+  right: 0px;
+  width: 240px;
+  height: 88px;
+  background: #EFEFEF;
+  padding: 10px 0 10px 10px;
+}
+
+#cart img{
+  float: left;
+  border-right: 2px solid #C3C3C3;
+  padding: 5px 15px 0 0;
+}
+
+#cart #info_cart{
+  font-family: Verdana;
+  font-weight: 900;
+  text-align: center;
+  height: 75px;
+  padding: 12px 0 0 0;
+  color: #F00;
+}
+
+#feature{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-weight: bolder;
+}
+
+#feature ul li{
+  float: left;
+  height: 35px;
+  line-height: 35px;
+  padding: 0 30px 0 35px;
+}
+
+#assurance{
+  background: url(../images/system/assurance.png) no-repeat 0 3px;
+}
+
+#delivery{
+  background: url(../images/system/delivery.png) no-repeat 0 2px;
+}
+
+/*****************************/
+/************ MENU ***********/
+/*****************************/
+#menu{
+  width: 1000px;
+  margin: 15px auto;
+  height: 42px;
+  background: #000;
+  /*position: fixed;*/
+  /*top: 0;*/
+  /*position: absolute;*/
+  /*position: relative;*/
+}
+
+#menu ul li{
+  float: left;
+  height: 42px;
+  border-right: 1px dotted #666;
+}
+
+#menu ul li a{
+  padding: 0 25px;
+  color: #ccc;
+  font-weight: bold;
+  line-height: 42px;
+  display: inline-block;
+}
+
+#menu ul li a:hover{
+  color: #fff;
+  background: #f0f;
+  text-decoration: none;
+
+}
+
+#menu img{
+  float: left;
+  padding: 3px 10px;
+}
+
+/*****************************/
+/************ INFO ***********/
+/*****************************/
+#info{
+  width: 1000px;
+  margin: auto;
+  height: 300px;
+}
+
+#slider{
+  width: 630px;
+  height: 300px;
+  float: left;
+}
+
+#ads{
+  width: 340px;
+  height: 300px;
+  float: right;
+}
+
+#up_ads{
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+#up_ads img{
+  width: 338px;
+  height: 200px;
+  border-radius: 5px;
+}
+
+#down_ads{
+  border-radius: 5px;
+  text-align: center;
+  height: 78px;
+  margin-top: 20px;
+}
+
+#down_ads form{
+  margin-left: 16px;
+}
+
+#down_ads input{
+  width: 230px;
+  float: left;
+}
+
+#down_ads button{
+  float: left;
+}
+
+#down_ads p{
+  font-weight: bold;
+  font-size: 13pt;
+  margin-top: 10px;
+}
+
+/*****************************/
+/************ MAIN ***********/
+/*****************************/
+#main{
+  width: 1000px;
+  margin: 15px auto;
+}
+
+#main_left{
+  width: 260px;
+  float: left;
+}
+
+#main_left h3{
+  font-size: 13pt;
+  width: 200px;
+  background: #FDD504;
+  font-weight: bold;
+  margin: 0;
+  padding-left: 4px;
+  height: 30px;
+  line-height: 30px;
+}
+
+#main_left ul li{
+  padding: 8px 3px 3px;
+  height: 80px;
+  border-bottom: 2px solid #F0F0F0;
+}
+
+#main_left .thumbnail{
+  float: left;
+  width: 70px;
+  margin-bottom: 0;
+}
+
+#main_left .thumbnail img{
+  height: 50px;
+}
+
+#main_left .abstract_info{
+  float: left;
+  margin-left: 5px;
+  padding-top: 3px;
+  width: 176px;
+}
+
+#main_left .abstract_info a{
+  font-weight: bold;
+}
+
+#main_left .abstract_info span{
+  background: red;
+  color: #fff;
+  border-radius: 3px;
+  margin-left: 12px;
+  padding: 2px 6px;
+  font-weight: bold;
+}
+
+#main_left .abstract_info p{
+  margin-top: 3px;
+}
+
+#main_right{
+  float: right;
+  width: 725px;
+  border-left: 1px solid black;
+}
+
+.product{
+  float: left;
+  margin: 0 0px 21px 15px;
+  text-align: center;
+  padding: 4px;
+  border-radius: 5px;
+}
+
+.product:hover{
+  background:#EEE;
+  box-shadow:0 0 15px #969696;
+}
+
+.product .product_name{
+  font-size: 12pt;
+  color: #FD00FC;
+  font-weight: bold;
+  margin: 5px 0;
+}
+
+.product .product_price{
+  color: #8C7F83;
+  margin: 0 0 3px 0;
+}
+
+.product img{
+  width: 218px;
+  height: 210px;
+}
+
+/*******************************/
+/************ FOOTER ***********/
+/*******************************/
+#footer{
+  width: 1000px;
+  margin: 20px auto;
+  margin-bottom: 0;
+  padding: 10px;
+  text-align: center;
+  font-weight: bold;
+  background: #EFEFEF;
+  color: #000;
+}
+
+#footer ul{
+  margin: 0;
+}
+
+/***********************************/
+/************ LOGIN FORM ***********/
+/***********************************/
+#login_form{
+  width: 410px;
+  margin: auto;
+  font-weight: bold;
+  background: #F0DFC9;
+  padding: 22px 10px 10px 16px;
+  border-radius: 10px;
+}
+
+#login_form td{
+  padding: 6px;
+}
+
+#login_form .error{
+  padding-left: 60px;
+  color: red;
+}
+
+#login_form .error ul{
+  list-style-type: circle;
+}
+
+/***********************************/
+/************* SIGN FORM ***********/
+/***********************************/
+#signup_form{
+  width: 470px;
+  margin: auto;
+  font-weight: bold;
+  background: #F0DFC9;
+  padding: 25px 10px 10px 16px;
+  border-radius: 10px;
+}
+
+#signup_form td{
+  padding: 6px;
+}
+
+#signup_form .error{
+  padding-left: 60px;
+  color: red;
+}
+
+#signup_form .error ul{
+  list-style-type: circle;
 }

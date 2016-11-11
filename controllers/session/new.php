@@ -1,20 +1,20 @@
 <?php
 $data = "";
 if(isset($_POST['ok'])){
-  $u = $p = "";
-  if(empty($_POST['txtname'])){
-    $data['err'][] = "Dien ten dang nhap";
+  $email = $pass = "";
+  if(empty($_POST['txtemail'])){
+    $data['error'][] = "Email không được để trống";
   }else{
-    $u = $_POST['txtname'];
+    $email = $_POST['txtemail'];
   }
 
   if(empty($_POST['txtpass'])){
-    $data['err'][] = "Mat khau ko duoc de trong";
+    $data['error'][] = "Mật khẩu không được để trống";
   }else{
-    $p = $_POST['txtpass'];
+    $pass = $_POST['txtpass'];
   }
 
-  if($u == "admin" && $p == "123"){
+  if($email && $pass){
     $_SESSION['name'] = "admin";
     $_SESSION['pass'] = "123";
     $_SESSION['level'] = "3";
