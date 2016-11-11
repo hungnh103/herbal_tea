@@ -3,7 +3,7 @@ class Database{
   protected $_hostname = "localhost";
   protected $_userhost = "root";
   protected $_passhost = "";
-  protected $_dbname = "project";
+  protected $_dbname = "herbal_tea";
   protected $_conn;
   protected $_result;
 
@@ -54,5 +54,44 @@ class Database{
 
 // ****************************************** //
 class Model extends Database{
+  protected $_select = "*";
+  protected $_where;
 
+  public function __construct(){
+    $this->connect();
+  }
+
+  public function select($col){
+    if(!empty($col)){
+      $this->_select = $col;
+    }
+  }
+
+  public function where($where){
+    if(is_array($where)){
+      foreach($where as $k => $v){
+        $arr[] = "$k '$v'";
+      }
+      $condition = implode(" AND ", $arr);
+      $this->_where = "WHERE $condition";
+    }else{
+      $this->_where = "WHERE $where";
+    }
+  }
+
+  public function insert($table, $data){
+    $column = implode(", ", array_keys($data));
+    $value = array_values($data);
+    foreach($value as $item){
+      $new_value[] = "'$item'";
+    }
+    $insert_value = implode(", ", $new_value);
+    $sql = "INSERT INTO $table($column) VALUES($insert_value)";
+    $this->query($sql);
+  }
+
+  public function getData($table){
+    $sql = "SELECT $this->_select FROM $table $this->_where";
+    $this->query($sql);
+  }
 }
