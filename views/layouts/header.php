@@ -24,9 +24,9 @@
 
         <div id="top_right">
           <?php
-          if(isset($_SESSION['name'])){
-            echo "xin chao $_SESSION[name]";
-            echo "<a href='index.php?controller=session&action=destroy' id='logout'>Thoat</a>";
+          if(isset($_SESSION['level']) && ($_SESSION['level'] == 1)){
+            echo "Xin chào $_SESSION[name]";
+            echo "<a href='index.php?controller=session&action=destroy' id='logout'> (Đăng xuất)</a>";
           }else{
             echo "<ul>";
               echo "<li id='signup'><a href='index.php?controller=user&action=signup'>Đăng ký</a></li>";

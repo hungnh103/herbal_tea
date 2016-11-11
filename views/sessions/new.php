@@ -4,7 +4,7 @@ loadview("layouts/header");
 <div id="">
   <form id="login_form" action="index.php?controller=session&action=new" method="post">
   <?php
-  if(!empty($data)){
+  if(!empty($data['error'])){
     echo "<div class='error'>";
       foreach($data['error'] as $err){
         echo "<ul>";
