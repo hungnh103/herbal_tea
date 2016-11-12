@@ -14,4 +14,18 @@ class Model_User extends Model{
       return true;
     }
   }
+
+  public function listUser(){
+    $this->getData($this->_table);
+    return $this->fetchAll();
+  }
+
+  public function deleteUser($id){
+    $this->where("uid = '$id'");
+    $this->delete($this->_table);
+  }
+
+  public function updateUser($data){
+    $this->update($this->_table, $data);
+  }
 }

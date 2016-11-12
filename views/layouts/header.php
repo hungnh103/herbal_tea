@@ -22,13 +22,31 @@
           </ul>
         </div>
 
+        <script type="text/javascript">
+          $(document).ready(function(){
+            $("#navigation li").hover(function(){
+              $(this).find("ul:first").toggle();
+            });
+          });
+        </script>
+
         <div id="top_right">
           <?php
           if(isset($_SESSION['level']) && ($_SESSION['level'] == 1)){
-            echo "Xin chào $_SESSION[name]";
-            echo "<a href='index.php?controller=session&action=destroy' id='logout'> (Đăng xuất)</a>";
+            echo "<div id='current_user'>";
+              echo "<ul id='navigation'>";
+                echo "<li>Xin chào $_SESSION[name]</li>";
+                echo "<li class='mini_menu'><img src='assets/images/users/user1.png'>";
+                  echo "<ul>";
+                    echo "<li style='border-top: none;'><a href='#' class='mini_account'>Tài khoản</a></li>";
+                    echo "<li><a href='#' class='mini_cart'>Giỏ hàng</a></li>";
+                    echo "<li><a href='index.php?controller=session&action=destroy' class='mini_logout'>Đăng xuất</a></li>";
+                  echo "</ul>";
+                echo "</li>";
+              echo "</ul>";
+            echo "</div>";
           }else{
-            echo "<ul>";
+            echo "<ul class='visitor'>";
               echo "<li id='signup'><a href='index.php?controller=user&action=signup'>Đăng ký</a></li>";
               echo "<li id='vertical_slash'>|</li>";
               echo "<li id='login'><a href='index.php?controller=session&action=new'>Đăng nhập</a></li>";
@@ -43,7 +61,7 @@
       <div class="clr"></div>
 
       <div id="header">
-        <div id="logo"></div>
+        <div id="logo"><a href="index.php"><img src="assets/images/system/logo.jpg"></a></div>
         <div id="search">
           <form>
             <input type='text' placeholder='Tìm kiếm sản phẩm...' class='form-control' />
