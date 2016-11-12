@@ -41,12 +41,11 @@ class Database{
   }
 
   public function fetchAll(){
+    $data = "";
     if($this->_result){
       while($row = $this->fetch()){
         $data[] = $row;
       }
-    }else{
-      $data = "";
     }
     return $data;
   }
@@ -56,6 +55,7 @@ class Database{
 class Model extends Database{
   protected $_select = "*";
   protected $_where;
+  protected $_order;
 
   public function __construct(){
     $this->connect();
@@ -79,6 +79,15 @@ class Model extends Database{
     }
   }
 
+  public function order($col, $type = "ASC"){
+    if(!empty($col)){
+      $this->_order = "ORDER BY $col $type";
+    }
+  }
+
+  // bat dau cai dat cac cau truy van
+  // ********************************
+  // ********************************
   public function insert($table, $data){
     $column = implode(", ", array_keys($data));
     $value = array_values($data);
@@ -91,7 +100,21 @@ class Model extends Database{
   }
 
   public function getData($table){
-    $sql = "SELECT $this->_select FROM $table $this->_where";
+    $sql = "SELECT $this->_select FROM $table $this->_where $this->_order";
+    $this->query($sql);
+  }
+
+  public function delete($table){
+    $sql = "DELETE FROM $table $this->_where";
+    $this->query($sql);
+  }
+
+  public function update($table, $data){
+    foreach($data as $k => $v){
+      $arr[] = "$k = '$v'";
+    }
+    $condition = implode(", ", $arr);
+    $sql = "UPDATE $table SET $condition $this->_where";
     $this->query($sql);
   }
 }

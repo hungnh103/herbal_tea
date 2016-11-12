@@ -70,7 +70,72 @@ a:hover{
   margin-right: 10px;
 }
 
-#top_right ul li{
+#top_right #current_user{
+  height: 35px;
+  line-height: 35px;
+  margin-top: -10px;
+}
+
+#top_right #current_user li{
+  float: left;
+}
+
+#top_right #current_user li a{
+  color: #000;
+  font-weight: bold;
+  height: 35px;
+  line-height: 35px;
+  padding: 3px 0 3px 30px ;
+  width: 110px;
+  display: block;
+}
+
+#top_right #current_user #navigation > li{
+  position: relative;
+}
+
+#top_right #current_user #navigation > li > ul{
+  position: absolute;
+  left: -65px;
+  top: 35px;
+  display: none;
+  z-index: 20;
+}
+
+#top_right #current_user #navigation > li > ul > li{
+  background: #D9F9D5;
+  border-top: 1px dashed black;
+}
+
+#top_right #current_user #navigation > li > ul > li:hover{
+  background: #8EED83;
+}
+
+.mini_menu{
+  margin-top: -2px;
+  padding-right: 20px;
+  background: url(../images/system/arrow_down.png) no-repeat 26px 15px;
+  margin-left: 10px;
+}
+
+.mini_menu img{
+  width: 20px;
+  height: 20px;
+}
+
+.mini_account{
+  background: url(../images/system/mini_account.png) no-repeat 7px 11px;
+}
+
+.mini_cart{
+  background: url(../images/system/mini_cart.png) no-repeat 7px 11px;
+}
+
+.mini_logout{
+  background: url(../images/system/mini_logout.png) no-repeat 7px 11px;
+}
+
+#top_right .visitor li{
   height: 35px;
   line-height: 35px;
   float: left;
@@ -101,12 +166,14 @@ a:hover{
 }
 
 #logo{
-  width: 150px;
-  height: 150px;
-  background: url(../images/system/logo.jpg) no-repeat;
   position: absolute;
   left: 30px;
   top: 14px;
+}
+
+#logo img{
+  width: 150px;
+  height: 150px;
 }
 
 #search{
@@ -442,4 +509,99 @@ a:hover{
 
 #signup_form .error ul{
   list-style-type: circle;
+}
+
+/****************************************/
+/************* MANAGE ACCOUNT ***********/
+/****************************************/
+
+#admin_mainpage{
+  width: 1000px;
+  margin: auto;
+}
+
+#admin_filter{
+  text-align: center;
+  margin-bottom: 20px;
+  height: 77px;
+  padding: 20px 0 0 130px;
+}
+
+#admin_filter span{
+  display: inline-block;
+  font-size: 11pt;
+  height: 34px;
+  line-height: 34px;
+  float: left;
+  margin-right: 20px;
+}
+
+#users_filter{
+  width: 200px;
+  margin: 0;
+  float: left;
+}
+
+#users_list table{
+  width: 900px;
+  margin: auto;
+}
+
+#users_list table thead{
+  background: #DBE7FD;
+}
+
+#users_list table thead th{
+  text-align: center;
+}
+
+#users_list .index{
+  width: 60px;
+  padding-bottom: 17px;
+}
+
+#users_list .name{
+  width: 120px;
+  padding-bottom: 17px;
+}
+
+#users_list .email{
+  padding-bottom: 17px;
+}
+
+#users_list .coin{
+  width: 100px;
+  padding-bottom: 17px;
+}
+
+#users_list .level{
+  width: 130px;
+  padding-bottom: 17px;
+}
+
+#users_list .change_level{
+  width: 100px;
+}
+
+#users_list .del, #users_list .check{
+  width: 50px;
+  padding-bottom: 17px;
+}
+
+.icon_delete{
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background: url(../images/system/delete.png) no-repeat;
+}
+
+.icon_change_level{
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background: url(../images/system/change_level.png) no-repeat;
+}
+
+table{
+  text-align: center;
 }
