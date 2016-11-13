@@ -28,7 +28,7 @@ if(isset($_POST['ok'])){
       }elseif($_SESSION['level'] == 2){
         redirect("http://localhost/www/herbal_tea/index.php?controller=salesmanager");
       }else{
-        redirect("http://localhost/www/herbal_tea/index.php?controller=admin/user");
+        redirect("http://localhost/www/herbal_tea/index.php?controller=admin");
       }
     }else{
       $data['error'][] = "Email hoặc mật khẩu không chính xác";

@@ -1,0 +1,79 @@
+/*****************************/
+/********* MAIN PAGE *********/
+/*****************************/
+#salesmanager_mainpage{
+  width: 1240px;
+}
+
+#salesmanager_mainpage_wrapper{
+  width: 1200px;
+  margin: auto;
+  margin-top: 20px;
+}
+
+#left_content{
+  float: left;
+  padding: 0px 10px 10px 0;
+}
+
+/*left menu*/
+/*left menu*/
+/*left menu*/
+/*left menu*/
+
+#left_menu{
+  width: 220px;
+  border: 1px solid #000;
+  border-radius: 6px;
+  background: #E9D9EB;
+}
+
+#left_menu > ul{
+  padding: 10px 20px 20px 20px;
+  margin-bottom: 0;
+}
+
+#left_menu li{
+  line-height:35px;
+  font-weight: bold;
+  font-size: 12pt;
+}
+
+#left_menu > ul > li{
+  border-bottom:1px solid #BC5F20;
+}
+
+#left_menu .submenu
+{
+  padding-bottom:15px;
+  display: none;
+}
+
+#left_menu .submenu li{
+  padding-left:30px;
+  font-size: 11pt;
+  background:url(../images/system/arrow_right.png) no-repeat 10px 8px;
+}
+
+#left_menu a{
+  color:#666;
+}
+
+#left_menu a:hover{
+  color:#F0F;
+  cursor:pointer;
+}
+
+/*******************/
+/*******************/
+/*******************/
+
+#right_content{
+  padding: 10px;
+  width: 955px;
+  float: right;
+  height: 500px;
+
+  border: 1px solid black;
+}
+

@@ -1,3 +1,9 @@
+      <?php
+      if(isset($_SESSION['level']) && ($_SESSION['level'] == 2)){
+          echo "</div>";
+        echo "</div>";
+      }
+      ?>
       <div class="clr"></div>
 
       <div id="footer">

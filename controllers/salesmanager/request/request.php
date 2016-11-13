@@ -4,5 +4,5 @@ if(isset($_GET['action'])){
 
   }
 }else{
-  require("controllers/salesmanager/product/index.php");
+  require("controllers/salesmanager/request/index.php");
 }
