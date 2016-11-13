@@ -13,7 +13,7 @@
   </head>
 
   <body>
-    <div id="website">
+    <div class="website">
       <div id="top">
         <div id="top_left">
           <ul>

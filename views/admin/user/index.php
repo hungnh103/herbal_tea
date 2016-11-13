@@ -15,7 +15,7 @@ loadview("layouts/simple_header");
     $("#users_filter").change(function(){
       level = $(this).val();
       $.ajax({
-        url:"index.php?controller=admin/user&action=index_ajax",
+        url:"index.php?controller=admin&resources=user&action=index_ajax",
         type:"get",
         data:"level="+level,
         async:true,
@@ -66,13 +66,13 @@ loadview("layouts/simple_header");
             if($item['level'] == 1){
               echo "<td>$item[accumulative_coins]</td>";
               echo "<td>Thường</td>";
-              echo "<td><a href='index.php?controller=admin/user&action=edit&uid=$item[uid]&level=$item[level]' onclick='return check_change_level();'><span class='icon_change_level'></span></td>";
-              echo "<td><a href='index.php?controller=admin/user&action=destroy&uid=$item[uid]' onclick='return check_delete();'><span class='icon_delete'></span></a></td>";
+              echo "<td><a href='index.php?controller=admin&resources=user&action=edit&uid=$item[uid]&level=$item[level]' onclick='return check_change_level();'><span class='icon_change_level'></span></td>";
+              echo "<td><a href='index.php?controller=admin&resources=user&action=destroy&uid=$item[uid]' onclick='return check_delete();'><span class='icon_delete'></span></a></td>";
               echo "<td><input type='checkbox'></td>";
             }elseif($item['level'] == 2){
               echo "<td>&nbsp;</td>";
               echo "<td style='color: blue; font-weight: bold;'>Quản lý bán hàng</td>";
-              echo "<td><a href='index.php?controller=admin/user&action=edit&uid=$item[uid]&level=$item[level]' onclick='return check_change_level();'><span class='icon_change_level'></span></td>";
+              echo "<td><a href='index.php?controller=admin&resources=user&action=edit&uid=$item[uid]&level=$item[level]' onclick='return check_change_level();'><span class='icon_change_level'></span></td>";
               echo "<td>&nbsp;</td>";
               echo "<td>&nbsp;</td>";
             }else{

@@ -2,9 +2,8 @@
 loadview("layouts/simple_header");
 loadview("salesmanager/nav_bar");
 ?>
-<fieldset>
-  <legend>Tóm tắt tình hình kinh doanh</legend>
-</fieldset>
+liet ke cac hoa don ban hang
+
 <?php
 loadview("layouts/footer");
 ?>

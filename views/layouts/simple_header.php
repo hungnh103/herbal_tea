@@ -8,12 +8,21 @@
     <link rel="stylesheet" type="text/css" href="assets/stylesheets/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="assets/stylesheets/custom.css" />
     <link rel="stylesheet" type="text/css" href="assets/stylesheets/btn_top.css" />
+    <?php
+    if($_SESSION['level'] == 3){
+      echo "<link rel='stylesheet' type='text/css' href='assets/stylesheets/admin.css' />";
+    }
+
+    if($_SESSION['level'] == 2){
+      echo "<link rel='stylesheet' type='text/css' href='assets/stylesheets/salesmanager.css' />";
+    }
+    ?>
     <script type="text/javascript" src="assets/javascripts/jquery.min.js"></script>
 
   </head>
 
   <body>
-    <div id="website">
+    <div class="website" id="salesmanager_mainpage">
       <div id="top">
         <div id="top_left">
           <ul>
