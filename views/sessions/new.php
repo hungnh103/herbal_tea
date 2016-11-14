@@ -1,16 +1,16 @@
 <?php
 loadview("layouts/header");
 ?>
-<div id="">
+<div>
   <form id="login_form" action="index.php?controller=session&action=new" method="post">
   <?php
   if(!empty($data['error'])){
     echo "<div class='error'>";
-      foreach($data['error'] as $err){
         echo "<ul>";
+        foreach($data['error'] as $err){
           echo "<li>$err</li>";
+        }
         echo "</ul>";
-      }
     echo "</div>";
   }
   ?>

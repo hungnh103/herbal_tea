@@ -33,6 +33,56 @@ a:hover{
   margin: auto;
 }
 
+table{
+  margin: auto;
+  text-align: center;
+}
+
+table thead{
+  background: #DBE7FD;
+}
+
+table thead th{
+  text-align: center;
+}
+
+.index{
+  width: 60px;
+}
+
+.edit, .del{
+  width: 50px;
+}
+
+.icon_delete{
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background: url(../images/system/delete.png) no-repeat;
+}
+
+.icon_edit{
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background: url(../images/system/edit.png) no-repeat;
+}
+
+.error{
+  padding-left: 60px;
+  color: red;
+  font-weight: bold;
+}
+
+.error ul{
+  list-style-type: circle;
+}
+
+.error ul li{
+  height: 25px;
+  line-height: 25px;
+}
+
 /*****************************/
 /************ TOP ************/
 /*****************************/
@@ -253,10 +303,6 @@ a:hover{
   margin: 15px auto;
   height: 42px;
   background: #000;
-  /*position: fixed;*/
-  /*top: 0;*/
-  /*position: absolute;*/
-  /*position: relative;*/
 }
 
 #menu ul li{
@@ -473,17 +519,12 @@ a:hover{
   border-radius: 10px;
 }
 
+#login_form table{
+  text-align: left;
+}
+
 #login_form td{
   padding: 6px;
-}
-
-#login_form .error{
-  padding-left: 60px;
-  color: red;
-}
-
-#login_form .error ul{
-  list-style-type: circle;
 }
 
 /***********************************/
@@ -498,15 +539,10 @@ a:hover{
   border-radius: 10px;
 }
 
+#signup_form table{
+  text-align: left;
+}
+
 #signup_form td{
   padding: 6px;
-}
-
-#signup_form .error{
-  padding-left: 60px;
-  color: red;
-}
-
-#signup_form .error ul{
-  list-style-type: circle;
 }

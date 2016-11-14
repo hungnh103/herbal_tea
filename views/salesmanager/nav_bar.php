@@ -26,3 +26,14 @@
     </script>
   </div>
   <div id="right_content">
+    <div id="sub_navbar">
+      <ul>
+        <li><a href="#">Trang chính</a></li>
+        <li><a href="#">> Công dụng nổi bật</a></li>
+        <li><a href="#">> Thêm công dụng</a></li>
+      </ul>
+    </div>
+
+    <div class="clr"></div>
+
+    <div id="right_content_detail">

@@ -27,6 +27,7 @@ if(isset($_POST['ok'])){
   if($user && $email && $pass){
     $muser = new Model_User;
     $muser->where("email = '$email'");
+    $muser->select("email");
     if($muser->checkUser() == true){
       $pass = md5($pass);
       $input_data = array("name" => $user, "email" => $email, "password" => $pass);

@@ -51,7 +51,7 @@ class Database{
   }
 }
 
-// ****************************************** //
+// ****************** MODEL ****************** //
 class Model extends Database{
   protected $_select = "*";
   protected $_where;
