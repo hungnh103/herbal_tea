@@ -31,20 +31,9 @@
 
 #users_list table{
   width: 900px;
-  margin: auto;
-  text-align: center;
-}
-
-#users_list table thead{
-  background: #DBE7FD;
-}
-
-#users_list table thead th{
-  text-align: center;
 }
 
 #users_list .index{
-  width: 60px;
   padding-bottom: 17px;
 }
 
@@ -53,7 +42,6 @@
   padding-bottom: 17px;
 }
 
-#users_list .email{
   padding-bottom: 17px;
 }
 
@@ -74,13 +62,6 @@
 #users_list .del, #users_list .check{
   width: 50px;
   padding-bottom: 17px;
-}
-
-.icon_delete{
-  display: inline-block;
-  width: 16px;
-  height: 16px;
-  background: url(../images/system/delete.png) no-repeat;
 }
 
 .icon_change_level{

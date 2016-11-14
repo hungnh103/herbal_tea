@@ -1,5 +1,6 @@
       <?php
       if(isset($_SESSION['level']) && ($_SESSION['level'] == 2)){
+            echo "</div>";
           echo "</div>";
         echo "</div>";
       }

@@ -6,11 +6,11 @@ loadview("layouts/header");
   <?php
   if(!empty($data)){
     echo "<div class='error'>";
-      foreach($data['error'] as $err){
         echo "<ul>";
+        foreach($data['error'] as $err){
           echo "<li>$err</li>";
+        }
         echo "</ul>";
-      }
     echo "</div>";
   }
   ?>

@@ -16,11 +16,6 @@
   padding: 0px 10px 10px 0;
 }
 
-/*left menu*/
-/*left menu*/
-/*left menu*/
-/*left menu*/
-
 #left_menu{
   width: 220px;
   border: 1px solid #000;
@@ -76,4 +71,51 @@
 
   border: 1px solid black;
 }
+
+#sub_navbar{
+  height: 35px;
+  margin-bottom: 20px;
+}
+
+#sub_navbar ul{
+  margin: 0;
+}
+
+#sub_navbar ul li{
+  height: 35px;
+  line-height: 35px;
+  float: left;
+  margin-right: 15px;
+}
+
+/**********************************/
+/********* MANAGE EFFECTS *********/
+/**********************************/
+#effects_list{
+  width: 700px;
+  margin: auto;
+}
+
+#effects_list table{
+  margin-top: 10px;
+}
+
+#effects_list .number_of_products{
+  width: 145px;
+}
+
+#add_effect_interface form{
+  margin: auto;
+  width: 585px;
+}
+
+#add_effect_interface table{
+  margin-bottom: 20px;
+}
+
+#add_effect_interface table td{
+  padding: 5px;
+  text-align: left;
+}
+
 
