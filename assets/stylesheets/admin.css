@@ -33,15 +33,12 @@
   width: 900px;
 }
 
-#users_list .index{
+#users_list .index, #users_list .email, #users_list .del, #users_list .check{
   padding-bottom: 17px;
 }
 
 #users_list .name{
   width: 120px;
-  padding-bottom: 17px;
-}
-
   padding-bottom: 17px;
 }
 
@@ -57,11 +54,6 @@
 
 #users_list .change_level{
   width: 100px;
-}
-
-#users_list .del, #users_list .check{
-  width: 50px;
-  padding-bottom: 17px;
 }
 
 .icon_change_level{

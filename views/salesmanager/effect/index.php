@@ -17,7 +17,7 @@ loadview("salesmanager/nav_bar");
       <tr>
         <th class="index">STT</th>
         <th class="effect_name">Tên công dụng</th>
-        <th class="number_of_products">Số lượng sản phẩm</th>
+        <th class="products_amount">Số lượng sản phẩm</th>
         <th class="edit">Sửa</th>
         <th class="del">Xoá</th>
       </tr>
@@ -35,9 +35,13 @@ loadview("salesmanager/nav_bar");
           echo "<tr>";
             echo "<td>$stt</td>";
             echo "<td>$item[content]</td>";
-            echo "<td>$item[number_of_products]</td>";
+            echo "<td>$item[products_amount]</td>";
             echo "<td><a href='index.php?controller=salesmanager&resources=effect&action=edit&oeid=$item[oeid]'><span class='icon_edit'></span></a></td>";
-            echo "<td><a href='index.php?controller=salesmanager&resources=effect&action=destroy&oeid=$item[oeid]' onclick='return check_delete();'><span class='icon_delete'></span></a></td>";
+            if($item['oeid'] == 1){
+              echo "<td>&nbsp;</td>";
+            }else{
+              echo "<td><a href='index.php?controller=salesmanager&resources=effect&action=destroy&oeid=$item[oeid]' onclick='return check_delete();'><span class='icon_delete'></span></a></td>";
+            }
           echo "</tr>";
 
           $stt++;
