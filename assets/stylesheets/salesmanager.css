@@ -20,7 +20,7 @@
   width: 220px;
   border: 1px solid #000;
   border-radius: 6px;
-  background: #E9D9EB;
+  background: #F0E5F1;
 }
 
 #left_menu > ul{
@@ -59,15 +59,10 @@
   cursor:pointer;
 }
 
-/*******************/
-/*******************/
-/*******************/
-
 #right_content{
   padding: 10px;
   width: 955px;
   float: right;
-  height: 500px;
 
   border: 1px solid black;
 }
@@ -100,7 +95,7 @@
   margin-top: 10px;
 }
 
-#effects_list .number_of_products{
+#effects_list .products_amount{
   width: 145px;
 }
 
@@ -118,4 +113,82 @@
   text-align: left;
 }
 
+/***********************************/
+/********* MANAGE PRODUCTS *********/
+/***********************************/
+#other_action{
+  height: 40px;
 
+  border: 1px solid black;
+}
+
+#product_list table{
+  margin-top: 10px;
+}
+
+#product_list table th{
+  padding-bottom: 17px;
+}
+
+.remain, .running_out, .out_of_stock{
+  padding: 5px;
+  border-radius: 5px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.remain{
+  background-color: #0362C5;
+}
+
+.running_out{
+  background-color: #EC971F;
+}
+
+.out_of_stock{
+  background-color: #C9302C;
+}
+
+.product_price{
+  width: 165px;
+}
+
+.product_status, .sold_quantity, .current_quantity{
+  width: 90px;
+}
+
+.update_quantity{
+  width: 80px;
+}
+
+#add_edit_product_interface form{
+  float: left;
+  width: 675px;
+}
+
+#add_edit_product_interface table td{
+  text-align: left;
+  padding: 5px;
+  font-size: 11pt;
+}
+
+#add_edit_product_interface .error{
+  width: 258px;
+  float: left;
+  padding-left: 16px;
+}
+
+#update_product_quantity{
+  width: 400px;
+  margin: auto;
+}
+
+#update_product_quantity .error{
+  height: 30px;
+}
+
+#update_product_quantity form table td{
+  text-align: left;
+  padding: 6px;
+  font-size: 11pt;
+}

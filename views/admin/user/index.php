@@ -35,8 +35,8 @@ loadview("layouts/simple_header");
       <select id='users_filter' class='form-control'>
         <option value='0'>-- Tất cả --</option>
         <option value='1'>Tài khoản thường</option>
-        <option value='2'>Quản lý bán hàng</option>
-        <option value='3'>Quản trị viên</option>
+        <option value='2' style='font-weight: bold; color: blue;'>Quản lý bán hàng</option>
+        <option value='3' style='font-weight: bold; color: red;'>Quản trị viên</option>
       </select>
     </form>
   </div>

@@ -50,7 +50,7 @@ table thead th{
   width: 60px;
 }
 
-.edit, .del{
+.edit, .del, .check{
   width: 50px;
 }
 
@@ -66,6 +66,13 @@ table thead th{
   width: 16px;
   height: 16px;
   background: url(../images/system/edit.png) no-repeat;
+}
+
+.icon_update{
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background: url(../images/system/update.png) no-repeat;
 }
 
 .error{

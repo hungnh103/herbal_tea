@@ -5,7 +5,7 @@
         <li><a href="index.php?controller=salesmanager">Trang chính</a></li>
         <li><a href="javascript:void(0)">Trà thảo dược</a>
           <ul class="submenu">
-            <li><a href="index.php?controller=salesmanager&resources=product">Sản phẩm</a></li>
+            <li><a href="index.php?controller=salesmanager&resources=product">Kho hàng</a></li>
             <li><a href="index.php?controller=salesmanager&resources=effect">Công dụng nổi bật</a></li>
             <li><a href="index.php?controller=salesmanager&resources=invoice">Hoá đơn</a></li>
             <li><a href="index.php?controller=salesmanager&resources=request">Người dùng yêu cầu</a></li>
