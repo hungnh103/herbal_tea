@@ -7,7 +7,7 @@
           <ul class="submenu">
             <li><a href="index.php?controller=salesmanager&resources=product">Kho hàng</a></li>
             <li><a href="index.php?controller=salesmanager&resources=effect">Công dụng nổi bật</a></li>
-            <li><a href="index.php?controller=salesmanager&resources=invoice">Hoá đơn</a></li>
+            <li><a href="index.php?controller=salesmanager&resources=invoice">Đơn hàng</a></li>
             <li><a href="index.php?controller=salesmanager&resources=request">Người dùng yêu cầu</a></li>
           </ul>
         </li>

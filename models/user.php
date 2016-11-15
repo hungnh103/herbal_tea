@@ -28,4 +28,9 @@ class Model_User extends Model{
   public function updateUser($data){
     $this->update($this->_table, $data);
   }
+
+  public function showUser(){
+    $this->getData($this->_table);
+    return $this->fetch();
+  }
 }
