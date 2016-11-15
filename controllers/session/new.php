@@ -21,6 +21,8 @@ if(isset($_POST['ok'])){
     $muser->where($arr);
     if($muser->checkUser() == false){
       $info = $muser->fetch();
+      $_SESSION['uid'] = $info['uid'];
+      $_SESSION['avatar'] = $info['avatar'];
       $_SESSION['name'] = $info['name'];
       $_SESSION['level'] = $info['level'];
       if($_SESSION['level'] == 1){

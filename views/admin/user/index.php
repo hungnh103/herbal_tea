@@ -64,7 +64,7 @@ loadview("layouts/simple_header");
             echo "<td>$item[name]</td>";
             echo "<td>$item[email]</td>";
             if($item['level'] == 1){
-              echo "<td>$item[accumulative_coins]</td>";
+              echo "<td>".number_format($item['accumulative_coins'])."</td>";
               echo "<td>Thường</td>";
               echo "<td><a href='index.php?controller=admin&resources=user&action=edit&uid=$item[uid]&level=$item[level]' onclick='return check_change_level();'><span class='icon_change_level'></span></td>";
               echo "<td><a href='index.php?controller=admin&resources=user&action=destroy&uid=$item[uid]' onclick='return check_delete();'><span class='icon_delete'></span></a></td>";

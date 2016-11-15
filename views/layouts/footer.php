@@ -1,8 +1,10 @@
       <?php
       if(isset($_SESSION['level']) && ($_SESSION['level'] == 2)){
+        if($_GET['controller'] == "salesmanager"){
+              echo "</div>";
             echo "</div>";
           echo "</div>";
-        echo "</div>";
+        }
       }
       ?>
       <div class="clr"></div>
