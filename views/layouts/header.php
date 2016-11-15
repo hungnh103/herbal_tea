@@ -92,7 +92,7 @@
         <ul>
           <img src="assets/images/system/home.png">
           <li style="border-left:1px dotted #666;">
-            <a href="index.php?controller=static_page&action=home">Trang chủ</a>
+            <a href="index.php">Trang chủ</a>
           </li>
           <li><a href="">Trà thảo dược</a></li>
           <li><a href="index.php?controller=static_page&action=guide">Hướng dẫn mua hàng</a></li>
