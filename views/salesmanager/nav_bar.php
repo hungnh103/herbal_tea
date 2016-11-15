@@ -19,8 +19,8 @@
 
     <script type="text/javascript">
       $(document).ready(function(){
-        $("#left_menu > ul > li > a").click(function(){
-          $(this).next(".submenu").slideToggle();
+        $("#left_menu > ul > li > a").hover(function(){
+          //$(this).next(".submenu").slideToggle();
         });
       });
     </script>
@@ -28,9 +28,23 @@
   <div id="right_content">
     <div id="sub_navbar">
       <ul>
-        <li><a href="#">Trang chính</a></li>
-        <li><a href="#">> Công dụng nổi bật</a></li>
-        <li><a href="#">> Thêm công dụng</a></li>
+        <li><a href="index.php?controller=salesmanager">Trang chính</a></li>
+        <?php
+        if(isset($_GET['resources'])){
+          switch($_GET['resources']){
+            case "product": echo "<li><a href='index.php?controller=salesmanager&resources=product'>> Kho hàng</a></li>"; break;
+            case "effect": echo "<li><a href='index.php?controller=salesmanager&resources=effect'>> Công dụng nổi bật</a></li>"; break;
+          }
+        }
+
+        if(isset($_GET['action'])){
+          switch($_GET['action']){
+            case "new": echo "<li>> Thêm</li>"; break;
+            case "edit": echo "<li>> Sửa</li>"; break;
+            case "quantity_update": echo "<li>> Cập nhật số lượng</li>"; break;
+          }
+        }
+        ?>
       </ul>
     </div>
 

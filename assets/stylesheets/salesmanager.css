@@ -29,7 +29,6 @@
 }
 
 #left_menu li{
-  line-height:35px;
   font-weight: bold;
   font-size: 12pt;
 }
@@ -41,7 +40,7 @@
 #left_menu .submenu
 {
   padding-bottom:15px;
-  display: none;
+  /*display: none;*/
 }
 
 #left_menu .submenu li{
@@ -52,6 +51,9 @@
 
 #left_menu a{
   color:#666;
+  line-height: 35px;
+  height: 35px;
+  display: block;
 }
 
 #left_menu a:hover{
@@ -60,11 +62,8 @@
 }
 
 #right_content{
-  padding: 10px;
   width: 955px;
   float: right;
-
-  border: 1px solid black;
 }
 
 #sub_navbar{
@@ -81,6 +80,7 @@
   line-height: 35px;
   float: left;
   margin-right: 15px;
+  font-weight: bold;
 }
 
 /**********************************/
