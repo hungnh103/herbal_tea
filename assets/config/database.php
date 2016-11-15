@@ -56,6 +56,7 @@ class Model extends Database{
   protected $_select = "*";
   protected $_where;
   protected $_order;
+  protected $_limit;
 
   public function __construct(){
     $this->connect();
@@ -85,6 +86,12 @@ class Model extends Database{
     }
   }
 
+  public function limit($quantity, $start = "0"){
+    if(!empty($quantity)){
+      $this->_limit = "LIMIT $start, $quantity";
+    }
+  }
+
   // bat dau cai dat cac cau truy van
   // ********************************
   // ********************************
@@ -100,7 +107,7 @@ class Model extends Database{
   }
 
   public function getData($table){
-    $sql = "SELECT $this->_select FROM $table $this->_where $this->_order";
+    $sql = "SELECT $this->_select FROM $table $this->_where $this->_order $this->_limit";
     $this->query($sql);
   }
 

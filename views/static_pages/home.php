@@ -81,149 +81,43 @@ loadview("layouts/header");
       <div id="main">
         <div id="main_left">
           <h3>SẢN PHẨM BÁN CHẠY</h3>
-          <ul>
-            <li style='border-top: 2px solid #FDD504;'>
-              <div class="thumbnail">
-                <a href=""><img src="assets/images/products/new.png"></a>
-              </div>
-              <div class="abstract_info">
-                <a href="">Hoa hồng</a><span>new</span>
-                <p></p>
-              </div>
-            </li>
-            <li>
-              <div class="thumbnail">
-                <a href=""><img src="assets/images/products/new.png"></a>
-              </div>
-              <div class="abstract_info">
-                <a href="">Hoa hồng</a><span>new</span>
-                <p></p>
-              </div>
-            </li>
-            <li>
-              <div class="thumbnail">
-                <a href=""><img src="assets/images/products/new.png"></a>
-              </div>
-              <div class="abstract_info">
-                <a href="">Hoa hồng</a>
-                <p></p>
-              </div>
-            </li>
-            <li>
-              <div class="thumbnail">
-                <a href=""><img src="assets/images/products/new.png"></a>
-              </div>
-              <div class="abstract_info">
-                <a href="">Hoa hồng</a><span>new</span>
-                <p></p>
-              </div>
-            </li>
-            <li>
-              <div class="thumbnail">
-                <a href=""><img src="assets/images/products/new.png"></a>
-              </div>
-              <div class="abstract_info">
-                <a href="">Hoa hồng</a>
-                <p></p>
-              </div>
-            </li>
-            <li>
-              <div class="thumbnail">
-                <a href=""><img src="assets/images/products/new.png"></a>
-              </div>
-              <div class="abstract_info">
-                <a href="">Hoa hồng</a>
-                <p></p>
-              </div>
-            </li>
+          <ul style='border-top: 2px solid #FDD504;'>
+            <?php
+            if(empty($data['main_left'])){
+              echo "<li style='font-size: 12pt;'>Chưa có sản phẩm nào</li>";
+            }else{
+              foreach($data['main_left'] as $item){
+                echo "<li>";
+                  echo "<div class='thumbnail'>";
+                    echo "<a href='#'><img src='assets/images/products/$item[image]'></a>";
+                  echo "</div>";
+                  echo "<div class='abstract_info'>";
+                    echo "<a href='#'>$item[name]</a><span>new</span>";
+                    echo "<p></p>";
+                  echo "</div>";
+                echo "</li>";
+              }
+            }
+            ?>
           </ul>
         </div>
 
         <div id="main_right">
-          <div class="product">
-            <a href="">
-              <img src="assets/images/products/hoangky.jpg">
-              <h2 class='product_name'>Hoa hồng</h2>
-              <p class='product_price'>138.000₫</p>
-            </a>
-          </div>
-          <div class="product">
-            <a href="">
-              <img src="assets/images/products/hoangky.jpg">
-              <h2 class='product_name'>Hoa hồng</h2>
-              <p class='product_price'>138.000₫</p>
-            </a>
-          </div>
-          <div class="product">
-            <a href="">
-              <img src="assets/images/products/hoangky.jpg">
-              <h2 class='product_name'>Hoa hồng</h2>
-              <p class='product_price'>138.000₫</p>
-            </a>
-          </div>
-          <div class="product">
-            <a href="">
-              <img src="assets/images/products/hoangky.jpg">
-              <h2 class='product_name'>Hoa hồng</h2>
-              <p class='product_price'>138.000₫</p>
-            </a>
-          </div>
-          <div class="product">
-            <a href="">
-              <img src="assets/images/products/hoangky.jpg">
-              <h2 class='product_name'>Hoa hồng</h2>
-              <p class='product_price'>138.000₫</p>
-            </a>
-          </div>
-          <div class="product">
-            <a href="">
-              <img src="assets/images/products/hoangky.jpg">
-              <h2 class='product_name'>Hoa hồng</h2>
-              <p class='product_price'>138.000₫</p>
-            </a>
-          </div>
-          <div class="product">
-            <a href="">
-              <img src="assets/images/products/hoangky.jpg">
-              <h2 class='product_name'>Hoa hồng</h2>
-              <p class='product_price'>138.000₫</p>
-            </a>
-          </div>
-          <div class="product">
-            <a href="">
-              <img src="assets/images/products/hoangky.jpg">
-              <h2 class='product_name'>Hoa hồng</h2>
-              <p class='product_price'>138.000₫</p>
-            </a>
-          </div>
-          <div class="product">
-            <a href="">
-              <img src="assets/images/products/hoangky.jpg">
-              <h2 class='product_name'>Hoa hồng</h2>
-              <p class='product_price'>138.000₫</p>
-            </a>
-          </div>
-          <div class="product">
-            <a href="">
-              <img src="assets/images/products/hoangky.jpg">
-              <h2 class='product_name'>Hoa hồng</h2>
-              <p class='product_price'>138.000₫</p>
-            </a>
-          </div>
-          <div class="product">
-            <a href="">
-              <img src="assets/images/products/hoangky.jpg">
-              <h2 class='product_name'>Hoa hồng</h2>
-              <p class='product_price'>138.000₫</p>
-            </a>
-          </div>
-          <div class="product">
-            <a href="">
-              <img src="assets/images/products/hoangky.jpg">
-              <h2 class='product_name'>Hoa hồng</h2>
-              <p class='product_price'>138.000₫</p>
-            </a>
-          </div>
+          <?php
+          if(empty($data['main_right'])){
+            echo "<p style='margin: 10px; font-size: 12pt;'>Chưa có sản phẩm nào</p>";
+          }else{
+            foreach($data['main_right'] as $item){
+              echo "<div class='product'>";
+                echo "<a href='#'>";
+                  echo "<img src='assets/images/products/$item[image]'>";
+                  echo "<h2 class='product_name'>$item[name]</h2>";
+                  echo "<p class='product_price'>".number_format($item['price'])."₫</p>";
+                echo "</a>";
+              echo "</div>";
+            }
+          }
+          ?>
         </div>
 
       </div>

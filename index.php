@@ -11,5 +11,12 @@ if(isset($_GET['controller'])){
     case "salesmanager": require("controllers/salesmanager/salesmanager.php"); break;
   }
 }else{
-  loadview("static_pages/home");
+  $mproduct = new Model_Product;
+  $mproduct->order("pid", "DESC");
+  $mproduct->limit("12");
+  $data['main_right'] = $mproduct->listProduct();
+  $mproduct->order("sold, pid", "DESC");
+  $mproduct->limit("6");
+  $data['main_left'] = $mproduct->listProduct();
+  loadview("static_pages/home", $data);
 }
