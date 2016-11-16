@@ -1,6 +1,8 @@
 <?php
-if(isset($_GET['resource'])){
-
+if(isset($_GET['resources'])){
+  switch($_GET['resources']){
+    case "address": require("controllers/user/address/address.php"); break;
+  }
 }else{
   if(isset($_GET['action'])){
     switch($_GET['action']){

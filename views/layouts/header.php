@@ -20,7 +20,7 @@
         <div id="top_left">
           <ul>
             <li id="email">Email: lequynhphuong2408@gmail.com</li>
-            <li id="hotline">Hotline: 01644183238</li>
+            <li id="hotline">Hotline: 0164.418.3238</li>
           </ul>
         </div>
 
@@ -70,14 +70,22 @@
             <input type='submit' value='TÌM KIẾM' />
           </form>
         </div>
-        <div id="cart">
-          <img src="assets/images/system/cart.png">
-          <div id="info_cart">
-            <p>50 sản phẩm</p>
-            <p>1.500.000 đồng</p>
-          </div>
 
+        <div id="cart">
+          <a href="index.php?controller=cart"><img src="assets/images/system/cart.png"></a>
+          <div id="info_cart">
+            <?php
+            if(isset($_SESSION['level'])){
+              echo "<p>".number_format($_SESSION['products_amount'])." sản phẩm</p>";
+              echo "<p>".number_format($_SESSION['total'])." đồng</p>";
+            }else{
+              echo "<p>0 sản phẩm</p>";
+              echo "<p>0 đồng</p>";
+            }
+            ?>
+          </div>
         </div>
+
         <div id="feature">
           <ul>
             <li id='assurance'>Uy tín, chất lượng</li>

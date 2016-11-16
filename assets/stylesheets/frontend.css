@@ -89,6 +89,23 @@
   background: url(../images/system/minus.png) no-repeat;
 }
 
+#product_abstract_info #login_for_buying{
+  border-radius: 3px;
+  background-color: #1E9F2F;
+  width: 228px;
+  margin: 0;
+  font-size: 11pt;
+  font-weight: normal;
+}
+
+#product_abstract_info #login_for_buying a{
+  color: #fff;
+}
+
+#product_abstract_info #login_for_buying a:hover{
+  text-decoration: underline;
+}
+
 #product_detail{
   width: 750px;
   padding: 20px;
@@ -162,4 +179,281 @@
   width: 70px;
   height: 70px;
   margin-bottom: 10px;
+}
+
+/************************************/
+/************** SHOW CART ***********/
+/************************************/
+#my_cart{
+  width: 1000px;
+  margin: auto;
+}
+
+#pending_product{
+  width: 700px;
+  float: left;
+}
+
+#pending_product > span{
+  display: block;
+  font-size: 15pt;
+  padding: 0 0 10px 10px;
+}
+
+#pending_product table .first_row{
+  border-top: none;
+  padding-bottom: 5px;
+  font-size: 11pt;
+}
+
+#pending_product table .net_price{
+  font-size: 13pt;
+  font-weight: bold;
+}
+
+#pending_product table td{
+  text-align: left;
+  padding: 20px;
+}
+
+#pending_product table img{
+  width: 160px;
+  height: 120px;
+}
+
+#pending_product table .name_and_delete{
+  padding: 20px 0;
+}
+
+#pending_product table h2{
+  margin: 0;
+  font-size: 16pt;
+  font-weight: bold;
+}
+
+#pending_product table h2 a{
+  color: #AD2A2A;
+}
+
+#pending_product table h2 a:hover{
+  color: #848712;
+}
+
+#pending_product table .icon_delete{
+  margin-top: 10px;
+  padding-left: 25px;
+}
+
+#pending_product table select{
+  margin-left: 8px;
+}
+
+#pending_product table .form-control{
+  width: 85px;
+}
+
+#pending_product table .push_product{
+  background: url(../images/system/add.png) no-repeat;
+  width: 20px;
+  height: 20px;
+  border: none;
+  float: left;
+  margin: 7px 5px 0 0;
+}
+
+#pending_product table .pop_product{
+  background: url(../images/system/minus.png) no-repeat;
+  width: 20px;
+  height: 20px;
+  border: none;
+  float: left;
+  margin: 7px 0 0 5px;
+}
+
+
+
+
+#make_order{
+  float: right;
+  width: 230px;
+  padding-top: 80px;
+}
+
+#make_order a{
+  padding: 10px 30px;
+  font-weight: bold;
+  font-size: 11pt;
+}
+
+#continue_buying a{
+  background: url(../images/system/arrow_left.png) no-repeat 6px 6px;
+  padding-left: 35px;
+  font-weight: bold;
+  margin-left: 20px;
+}
+
+#continue_buying a:hover{
+  background-color: #F0F0F0;
+}
+
+/*****************************************/
+/************** MANAGE ADDRESS ***********/
+/*****************************************/
+#create_edit_addr{
+  width: 1000px;
+  margin: auto;
+  position: relative;
+}
+
+#addr_form form{
+  margin-left: 150px;
+  border: 1px solid #B2B2B2;
+  border-radius: 5px;
+  width: 472px;
+  padding: 15px 30px;
+}
+
+#addr_form table{
+  margin: 0;
+}
+
+#addr_form table td{
+  text-align: left;
+  padding: 5px;
+}
+
+#create_edit_addr .error{
+  padding: 0;
+  position: absolute;
+  top: 50px;
+  right: 100px;
+}
+
+/*******************************************/
+/************** SHIPPING ADDRESS ***********/
+/*******************************************/
+#cart_shipping{
+  width: 1000px;
+  margin: auto;
+}
+
+#cart_shipping .shipping_address{
+  border: 1px dashed black;
+  border-radius: 5px;
+  width: 460px;
+  float: left;
+  margin: 20px;
+  padding: 10px;
+}
+
+#cart_shipping .shipping_address input{
+  padding: 3px;
+}
+
+#cart_shipping .shipping_address input:hover{
+  color: #fff;
+  background-color: #00f;
+}
+
+#cart_shipping #no_addr a:hover{
+  text-decoration: underline;
+}
+
+/**********************************/
+/************** PAYMENT ***********/
+/**********************************/
+#cart_payment{
+  width: 1000px;
+  margin: auto;
+}
+
+#payment_method{
+  width: 442px;
+  float: left;
+  border: 1px solid black;
+  padding: 5px;
+}
+
+#payment_method table input[type='radio']{
+  width: 25px;
+  height: 25px;
+  border-color: blue;
+  margin: 0px;
+}
+
+#payment_method table label{
+  margin: 0px;
+  height: 40px;
+  line-height: 40px;
+}
+
+#payment_method .atm_account_info{
+  display: none;
+}
+
+#addr_invoice_detail{
+  float: right;
+}
+
+#addr_invoice_detail .addr_info{
+  border: 1px dashed black;
+  border-radius: 5px;
+  padding: 5px;
+  width: 370px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+#addr_invoice_detail .addr_info a, #addr_invoice_detail .invoice_detail_info > a{
+  display: block;
+  border: 1px solid #a9a9a9;
+  padding: 5px 15px;
+  position: absolute;
+  top: 6px;
+  right: 5px;
+  color: #000;
+}
+
+#addr_invoice_detail .addr_info a:hover, #addr_invoice_detail .invoice_detail_info > a:hover{
+  background-color: #D1FDB3;
+}
+
+#addr_invoice_detail .addr_info p{
+  text-align: justify;
+}
+
+#addr_invoice_detail .invoice_detail_info{
+  border: 1px dashed black;
+  position: relative;
+  border-radius: 5px;
+  padding: 5px;
+  width: 370px;
+}
+
+#cart_payment table{
+  margin: 0px;
+}
+
+#cart_payment table td{
+  padding: 5px;
+  text-align: left;
+}
+
+#addr_invoice_detail .invoice_detail_info span{
+  font-weight: bold;
+}
+
+#addr_invoice_detail .invoice_detail_info .product_in_cart:hover{
+  text-decoration: underline;
+}
+
+/***************************************/
+/************** FINISH ORDER ***********/
+/***************************************/
+#success_order{
+  width: 1000px;
+  margin: auto;
+  text-align: center;
+  font-size: 14pt;
+  padding: 30px 0px;
 }

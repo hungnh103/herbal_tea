@@ -2,6 +2,7 @@
 session_start();
 require("assets/config/database.php");
 require("assets/config/function.php");
+
 if(isset($_GET['controller'])){
   switch($_GET['controller']){
     case "static_page": require("controllers/static_page.php"); break;
@@ -10,14 +11,21 @@ if(isset($_GET['controller'])){
     case "admin": require("controllers/admin/admin.php"); break;
     case "salesmanager": require("controllers/salesmanager/salesmanager.php"); break;
     case "product": require("controllers/product/product.php"); break;
+    case "cart": require("controllers/cart/cart.php"); break;
   }
 }else{
-  $mproduct = new Model_Product;
-  $mproduct->order("pid", "DESC");
-  $mproduct->limit("12");
-  $data['main_right'] = $mproduct->listProduct();
-  $mproduct->order("sold, pid", "DESC");
-  $mproduct->limit("6");
-  $data['main_left'] = $mproduct->listProduct();
-  loadview("static_pages/home", $data);
+  if(isset($_SESSION['level']) && ($_SESSION['level'] == 2)){
+    redirect("index.php?controller=salesmanager");
+  }elseif(isset($_SESSION['level']) && ($_SESSION['level'] == 3)){
+    redirect("index.php?controller=admin");
+  }else{
+    $mproduct = new Model_Product;
+    $mproduct->order("pid", "DESC");
+    $mproduct->limit("12");
+    $data['main_right'] = $mproduct->listProduct();
+    $mproduct->order("sold, pid", "DESC");
+    $mproduct->limit("6");
+    $data['main_left'] = $mproduct->listProduct();
+    loadview("static_pages/home", $data);
+  }
 }

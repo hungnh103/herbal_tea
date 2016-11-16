@@ -28,7 +28,7 @@
         <div id="top_left">
           <ul>
             <li id="email">Email: lequynhphuong2408@gmail.com</li>
-            <li id="hotline">Hotline: 01644183238</li>
+            <li id="hotline">Hotline: 0164.418.3238</li>
           </ul>
         </div>
 

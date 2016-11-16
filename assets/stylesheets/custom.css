@@ -265,10 +265,24 @@ table thead th{
   padding: 10px 0 10px 10px;
 }
 
+#cart a{
+  display: block;
+  border: 1px dashed #BFAB45;
+  height: 70px;
+  width: 70px;
+  float: left;
+  border-radius: 5px;
+}
+
+#cart a:hover{
+  background-color: #FEF7E3;
+}
+
 #cart img{
   float: left;
-  border-right: 2px solid #C3C3C3;
   padding: 5px 15px 0 0;
+  width: 81px;
+  height: 69px;
 }
 
 #cart #info_cart{
@@ -276,8 +290,9 @@ table thead th{
   font-weight: 900;
   text-align: center;
   height: 75px;
-  padding: 12px 0 0 0;
+  padding: 12px 12px 0 0;
   color: #F00;
+  float: right;
 }
 
 #feature{
