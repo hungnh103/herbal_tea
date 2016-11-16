@@ -63,7 +63,7 @@
       <div class="clr"></div>
 
       <div id="header">
-        <div id="logo"><a href="index.php"><img src="assets/images/system/logo.jpg"></a></div>
+        <div id="logo"><a href="http://localhost/www/herbal_tea/"><img src="assets/images/system/logo.jpg"></a></div>
         <div id="search">
           <form>
             <input type='text' placeholder='Tìm kiếm sản phẩm...' class='form-control' />

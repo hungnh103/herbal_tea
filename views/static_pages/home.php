@@ -89,10 +89,10 @@ loadview("layouts/header");
               foreach($data['main_left'] as $item){
                 echo "<li>";
                   echo "<div class='thumbnail'>";
-                    echo "<a href='#'><img src='assets/images/products/$item[image]'></a>";
+                    echo "<a href='index.php?controller=product&action=show&pid=$item[pid]'><img src='assets/images/products/$item[image]'></a>";
                   echo "</div>";
                   echo "<div class='abstract_info'>";
-                    echo "<a href='#'>$item[name]</a><span>new</span>";
+                    echo "<a href='index.php?controller=product&action=show&pid=$item[pid]'>$item[name]</a><span>new</span>";
                     echo "<p></p>";
                   echo "</div>";
                 echo "</li>";
@@ -109,7 +109,7 @@ loadview("layouts/header");
           }else{
             foreach($data['main_right'] as $item){
               echo "<div class='product'>";
-                echo "<a href='#'>";
+                echo "<a href='index.php?controller=product&action=show&pid=$item[pid]'>";
                   echo "<img src='assets/images/products/$item[image]' />";
                   echo "<h2 class='product_name'>$item[name]</h2>";
                   echo "<p class='product_price'>".number_format($item['price'])."₫</p>";
