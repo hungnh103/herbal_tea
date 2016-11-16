@@ -2,6 +2,27 @@
 loadview("layouts/simple_header");
 loadview("salesmanager/nav_bar");
 ?>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $("#increase_product").keyup(function(){
+      if($(this).val() != ""){
+        $("#decrease_product").attr("disabled", "disabled");
+      }else{
+        $("#decrease_product").removeAttr("disabled");
+      }
+    });
+
+    $("#decrease_product").keyup(function(){
+      if($(this).val() != ""){
+        $("#increase_product").attr("disabled", "disabled");
+      }else{
+        $("#increase_product").removeAttr("disabled");
+      }
+    });
+
+  });
+</script>
+
 <div id="update_product_quantity">
   <div class="error">
     <?php
@@ -25,8 +46,12 @@ loadview("salesmanager/nav_bar");
         <td style="color: brown; font-weight: bold;"><?php echo number_format($data['data']['quantity']); ?></td>
       </tr>
       <tr>
-        <td>Số lượng mới</td>
-        <td><input type="text" name="quantity" class="form-control" /></td>
+        <td>Bạn muốn thêm</td>
+        <td><input type="text" name="add_quantity" class="form-control" id="increase_product" /> <span>sản phẩm</span></td>
+      </tr>
+      <tr>
+        <td>hoặc bớt</td>
+        <td><input type="text" name="subtract_quantity" class="form-control" id="decrease_product" /> <span>sản phẩm</span></td>
       </tr>
       <tr>
         <td></td>

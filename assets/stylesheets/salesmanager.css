@@ -37,10 +37,8 @@
   border-bottom:1px solid #BC5F20;
 }
 
-#left_menu .submenu
-{
+#left_menu .submenu{
   padding-bottom:15px;
-  /*display: none;*/
 }
 
 #left_menu .submenu li{
@@ -117,10 +115,34 @@
 /********* MANAGE PRODUCTS *********/
 /***********************************/
 #other_action{
-  height: 40px;
-
-  border: 1px solid black;
+  height: 115px;
+  margin-top: -25px;
 }
+
+#other_action form{
+  float: left;
+  padding: 5px;
+}
+
+#other_action table{
+  margin: 0;
+}
+
+#other_action form table td{
+  text-align: left;
+  padding: 5px;
+  font-size: 11pt;
+}
+
+#other_action #product_filter{
+  margin-left: 130px;
+}
+
+#other_action #search_product{
+  margin-left: 20px;
+}
+
+
 
 #product_list table{
   margin-top: 10px;
@@ -191,4 +213,15 @@
   text-align: left;
   padding: 6px;
   font-size: 11pt;
+}
+
+#update_product_quantity form table input[type='text']{
+  width: 100px;
+  float: left;
+}
+
+#update_product_quantity form table span{
+  display: block;
+  padding: 7px;
+  float: left;
 }
