@@ -1,0 +1,23 @@
+#list_products_page{
+  width: 1000px;
+  margin: auto;
+}
+
+#products_filter{
+  padding: 10px 10px 10px 30px;
+  margin-bottom: 20px;
+  height: 54px;
+}
+
+#products_filter span{
+  display: block;
+  float: left;
+  height: 34px;
+  line-height: 34px;
+  font-size: 11pt;
+  margin-right: 20px;
+}
+
+#products_list .product{
+  margin-left: 24px;
+}
