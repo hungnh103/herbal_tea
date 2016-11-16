@@ -1,3 +1,6 @@
+/***************************************/
+/********** LIST ALL PRODUCTS **********/
+/***************************************/
 #list_products_page{
   width: 1000px;
   margin: auto;
@@ -20,4 +23,143 @@
 
 #products_list .product{
   margin-left: 24px;
+}
+
+/************************************/
+/*********** SHOW PRODUCT ***********/
+/************************************/
+#show_product{
+  width: 1000px;
+  margin: auto;
+}
+
+#product_image{
+  padding: 0 20px 20px 20px;
+  float: left;
+}
+
+#product_image img{
+  width: 480px;
+  height: 360px;
+}
+
+#product_abstract_info{
+  float: left;
+  margin-left: 80px;
+}
+
+#product_abstract_info table{
+  margin: 0;
+}
+
+#product_abstract_info table td{
+  text-align: left;
+  font-size: 12pt;
+  padding: 10px;
+}
+
+#product_abstract_info table h1{
+  margin: 0;
+}
+
+#product_abstract_info span{
+  display: block;
+  background: darkgoldenrod;
+  border-radius: 5px;
+  color: #fff;
+  padding: 8px;
+  width: 85px;
+  font-weight: bold;
+}
+
+#product_abstract_info input[type='button']{
+  width: 20px;
+  height: 20px;
+  border: none;
+  float: right;
+  margin: 6px;
+}
+
+#product_abstract_info #add{
+  background: url(../images/system/add.png) no-repeat;
+  margin-left: 25px;
+}
+
+#product_abstract_info #minus{
+  background: url(../images/system/minus.png) no-repeat;
+}
+
+#product_detail{
+  width: 750px;
+  padding: 20px;
+}
+
+#product_detail span{
+  display: block;
+  font-weight: bold;
+  font-size: 14pt;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #E7E7E7;
+}
+
+#product_detail div p{
+  text-align: justify;
+}
+
+#your_remark{
+  padding: 20px;
+  width: 750px;
+}
+
+#your_remark span{
+  display: block;
+  font-weight: bold;
+  font-size: 14pt;
+  border-bottom: 1px solid #E7E7E7;
+}
+
+#your_remark form{
+  margin-top: 10px;
+}
+#your_remark table{
+  margin: 0;
+  text-align: left;
+}
+
+#your_remark table td{
+  padding: 5px;
+}
+
+#your_remark table td textarea{
+  resize: none;
+}
+
+#remark_and_reply_list{
+  padding: 20px;
+}
+
+#remark_and_reply_list span{
+  display: block;
+  font-weight: bold;
+  font-size: 14pt;
+  border-bottom: 1px solid #E7E7E7;
+  margin-bottom: 10px;
+}
+
+.customer_remark{
+  border-bottom: 1px solid #E7E7E7;
+}
+
+.customer_remark table{
+  margin: 20px 0;
+}
+
+.customer_remark table td{
+  text-align: center;
+}
+
+.customer_remark img{
+  width: 70px;
+  height: 70px;
+  margin-bottom: 10px;
 }
