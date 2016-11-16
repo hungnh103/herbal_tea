@@ -37,4 +37,16 @@ class Model_Product extends Model{
   public function updateProduct($data){
     $this->update($this->_table, $data);
   }
+
+  public function updateProductAmount($id, $amount, $change){
+    $this->select("quantity");
+    $data = $this->getProductById($id);
+    if($change == "up"){
+      $data['quantity'] += $amount;
+    }else{
+      $data['quantity'] -= $amount;
+    }
+    $input_data = array("quantity" => $data['quantity']);
+    $this->updateProduct($input_data);
+  }
 }

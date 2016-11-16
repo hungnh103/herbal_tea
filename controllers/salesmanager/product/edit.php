@@ -46,7 +46,6 @@ if(isset($_POST['ok'])){
     if($mproduct->checkProduct($check_data) == true){
       $input_data = array(
                       "name" => $name,
-                      "oeid" => $outstanding_effect,
                       "packing_method" => $packing_method,
                       "price" => $price,
                       "description" => $description
@@ -54,6 +53,11 @@ if(isset($_POST['ok'])){
       if($image != "none"){
         $input_data['image'] = $image;
         move_uploaded_file($_FILES['image']['tmp_name'], "assets/images/products/".$_FILES['image']['name']);
+      }
+
+      if($outstanding_effect != $data['product']['oeid']){
+        $input_data['oeid'] = $outstanding_effect;
+        $meffect->changeAmountWhenEditProduct($data['product']['oeid'], $data['product']['quantity'], $outstanding_effect);
       }
       $mproduct->where("pid = '$pid'");
       $mproduct->updateProduct($input_data);

@@ -35,7 +35,7 @@ loadview("salesmanager/nav_bar");
           echo "<tr>";
             echo "<td>$stt</td>";
             echo "<td>$item[content]</td>";
-            echo "<td>$item[products_amount]</td>";
+            echo "<td>".number_format($item['products_amount'])."</td>";
             echo "<td><a href='index.php?controller=salesmanager&resources=effect&action=edit&oeid=$item[oeid]'><span class='icon_edit'></span></a></td>";
             if($item['oeid'] == 1){
               echo "<td>&nbsp;</td>";

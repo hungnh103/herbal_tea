@@ -8,8 +8,52 @@ loadview("salesmanager/nav_bar");
   }
 </script>
 <div id="other_action">
+  <form id="product_filter">
+    <table>
+      <tr>
+        <td colspan="2"><i>Tiêu chí hiển thị sản phẩm:</i></td>
+      </tr>
+      <tr>
+        <td style="padding: 0 40px 0 5px;">Tình trạng</td>
+        <td style="padding-bottom: 0;">Số lượng đã bán</td>
+      </tr>
+      <tr>
+        <td style="padding-right: 40px;">
+          <select class="form-control">
+            <option>-- Tất cả --</option>
+            <option style="color: #0362C5; font-weight: bold;">còn hàng</option>
+            <option style="color: #EC971F; font-weight: bold;">sắp hết</option>
+            <option style="color: #C9302C; font-weight: bold;">hết hàng</option>
+          </select>
+        </td>
+        <td>
+          <select class="form-control">
+            <option>-----</option>
+            <option>nhiều nhất > ít nhất</option>
+            <option>ít nhất > nhiều nhất</option>
+          </select>
+        </td>
+      </tr>
+    </table>
+  </form>
 
+  <form id="search_product">
+    <table>
+      <tr>
+        <td><i>Tìm kiếm sản phẩm</i></td>
+        <td><input type="text" name="" class="form-control" placeholder="Nhập tên sản phẩm" /></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><input type="submit" name="ok" value="Tìm" class="btn btn-primary" /></td>
+      </tr>
+    </table>
+  </form>
 </div>
+
+<div class="clr"></div>
+
+
 
 <div id="product_list">
   <a href="index.php?controller=salesmanager&resources=product&action=new" class="btn btn-success">Thêm</a>

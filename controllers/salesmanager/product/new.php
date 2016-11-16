@@ -52,6 +52,7 @@ if(isset($_POST['ok'])){
                       "description" => $description,
                       "oeid" => $outstanding_effect
                     );
+      $meffect->updateAmount($outstanding_effect, $quantity);
       $mproduct->addProduct($input_data);
       move_uploaded_file($_FILES['image']['tmp_name'], "assets/images/products/".$_FILES['image']['name']);
       redirect("index.php?controller=salesmanager&resources=product&action=index");
