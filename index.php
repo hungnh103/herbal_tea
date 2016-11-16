@@ -9,6 +9,7 @@ if(isset($_GET['controller'])){
     case "session": require("controllers/session/session.php"); break;
     case "admin": require("controllers/admin/admin.php"); break;
     case "salesmanager": require("controllers/salesmanager/salesmanager.php"); break;
+    case "product": require("controllers/product/product.php"); break;
   }
 }else{
   $mproduct = new Model_Product;

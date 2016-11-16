@@ -9,6 +9,7 @@
     <link rel="stylesheet" type="text/css" href="assets/stylesheets/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="assets/stylesheets/custom.css" />
     <link rel="stylesheet" type="text/css" href="assets/stylesheets/btn_top.css" />
+    <link rel="stylesheet" type="text/css" href="assets/stylesheets/frontend.css" />
     <script type="text/javascript" src="assets/javascripts/jquery.min.js"></script>
 
   </head>
@@ -92,12 +93,12 @@
         <ul>
           <img src="assets/images/system/home.png">
           <li style="border-left:1px dotted #666;">
-            <a href="index.php">Trang chủ</a>
+            <a href="http://localhost/www/herbal_tea/">Trang chủ</a>
           </li>
-          <li><a href="">Trà thảo dược</a></li>
+          <li><a href="index.php?controller=product">Trà thảo dược</a></li>
           <li><a href="index.php?controller=static_page&action=guide">Hướng dẫn mua hàng</a></li>
-          <li><a href="">Tin tức</a></li>
-          <li><a href="">Đăng ký làm đại lý</a></li>
+          <li><a href="#">Tin tức</a></li>
+          <li><a href="#">Đăng ký làm đại lý</a></li>
           <li><a href="https://www.facebook.com/quynhphuongtrathaoduoc/" target="_blank">Fanpage</a></li>
           <li><a href="index.php?controller=static_page&action=intro">Giới thiệu</a></li>
         </ul>
