@@ -5,6 +5,26 @@ $muser = new Model_User;
 $muser->where("uid = '$uid'");
 $data['data'] = $muser->showUser();
 
+$maddressregister = new Model_AddressRegister;
+$mcommune = new Model_Commune;
+$mdistrict = new Model_District;
+$mprovince = new Model_Province;
+$data['addr'] = $maddressregister->listAddressRegisterByUid($uid);
+if($data['addr'] != "") {
+  $i = 0;
+  foreach ($data['addr'] as $item){
+    $comm_info = $mcommune->getCommuneById($item['commid']);
+    $data['addr'][$i]['comm_name'] = $comm_info['name'];
+    $dist_info =  $mdistrict->getDistrictById($comm_info['distid']);
+    $data['addr'][$i]['dist_name'] = $dist_info['name'];
+    $prov_info = $mprovince->getProvinceById($dist_info['provid']);
+    $data['addr'][$i]['prov_name'] = $prov_info['name'];
+
+    $i++;
+  }
+}
+
+
 if(isset($_POST['ok'])){
   $name = $new_pass = $avatar = "";
   if(empty($_POST['txtname'])){
@@ -54,4 +74,5 @@ if(isset($_POST['ok'])){
     redirect("index.php?controller=user&uid=$uid");
   }
 }
+
 loadview("user/account", $data);

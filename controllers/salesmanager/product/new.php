@@ -33,7 +33,7 @@ if(isset($_POST['ok'])){
   $packing_method = $_POST['packing_method'];
 
   if(empty($_FILES['image']['name'])){
-    $image = "default_product_image.jpg";
+    $image = "none";
   }else{
     $image = $_FILES['image']['name'];
   }
@@ -48,13 +48,15 @@ if(isset($_POST['ok'])){
                       "price" => $price,
                       "quantity" => $quantity,
                       "packing_method" => $packing_method,
-                      "image" => $image,
                       "description" => $description,
                       "oeid" => $outstanding_effect
                     );
+      if($image != "none"){
+        $input_data['image'] = $image;
+        move_uploaded_file($_FILES['image']['tmp_name'], "assets/images/products/".$_FILES['image']['name']);
+      }
       $meffect->updateAmount($outstanding_effect, $quantity);
       $mproduct->addProduct($input_data);
-      move_uploaded_file($_FILES['image']['tmp_name'], "assets/images/products/".$_FILES['image']['name']);
       redirect("index.php?controller=salesmanager&resources=product&action=index");
     }else{
       $data['error'][] = "Kho hàng ĐÃ CÓ sản phẩm này";

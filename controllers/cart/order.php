@@ -1,0 +1,2 @@
+<?php
+loadview("cart/order");

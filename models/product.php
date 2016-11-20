@@ -49,4 +49,13 @@ class Model_Product extends Model{
     $input_data = array("quantity" => $data['quantity']);
     $this->updateProduct($input_data);
   }
+
+  public function updateAfterOrder($pid, $quantity){
+    $this->select("quantity, oeid");
+    $output = $this->getProductById($pid);
+    $output['quantity'] -= $quantity;
+    $update_data = array("quantity" => $output['quantity'], "sold" => $quantity);
+    $this->updateProduct($update_data);
+    return $output['oeid'];
+  }
 }

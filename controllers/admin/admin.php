@@ -8,5 +8,9 @@ if(isset($_SESSION['level']) && ($_SESSION['level'] == 3)){
     require("controllers/admin/user/index.php");
   }
 }else{
-  redirect("http://localhost/www/herbal_tea/");
+  if(isset($_SESSION['level']) && ($_SESSION['level'] == 2)){
+    redirect("http://localhost/www/herbal_tea/index.php?controller=salesmanager");
+  }else{
+    redirect("http://localhost/www/herbal_tea/");
+  }
 }

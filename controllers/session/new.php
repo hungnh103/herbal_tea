@@ -26,6 +26,19 @@ if(isset($_POST['ok'])){
       $_SESSION['name'] = $info['name'];
       $_SESSION['level'] = $info['level'];
       if($_SESSION['level'] == 1){
+        $minvoice = new Model_Invoice;
+        $cart_info = $minvoice->checkAfterLogin($_SESSION['uid']);
+        if($cart_info == false){
+          // chua co gio hang moi
+          $_SESSION['iid'] = 0;
+          $_SESSION['products_amount'] = 0;
+          $_SESSION['total'] = 0;
+        }else{
+          // co gio hang chua thanh toan
+          $_SESSION['iid'] = $cart_info['iid'];
+          $_SESSION['products_amount'] = $cart_info['products_amount'];
+          $_SESSION['total'] = $cart_info['total'];
+        }
         redirect("http://localhost/www/herbal_tea/");
       }elseif($_SESSION['level'] == 2){
         redirect("http://localhost/www/herbal_tea/index.php?controller=salesmanager");

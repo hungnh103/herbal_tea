@@ -71,4 +71,12 @@ class Model_Effect extends Model{
     $input_data = array("products_amount" => $data['products_amount']);
     $this->updateEffect($input_data);
   }
+
+  public function updateAfterOrder($oeid, $quantity){
+    $this->select("products_amount");
+    $output = $this->getEffectById($oeid);
+    $output['products_amount'] -= $quantity;
+    $update_data = array("products_amount" => $output['products_amount']);
+    $this->updateEffect($update_data);
+  }
 }

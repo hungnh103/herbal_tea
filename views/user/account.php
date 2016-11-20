@@ -16,6 +16,12 @@ if($_SESSION['level'] != 1){
 }
 ?>
 
+<script type="text/javascript">
+  function check_delete_addr(){
+    if (!window.confirm("Bạn chắc chắn muốn xoá sổ địa này?")) return false;
+  }
+</script>
+
 <div id="user_profile">
   <!-- Nav tabs -->
   <ul class="nav nav-tabs" role="tablist">
@@ -66,34 +72,28 @@ if($_SESSION['level'] != 1){
 
       <?php
       if($_SESSION['level'] == 1){
-        echo "<div id='address_list'>";
-          echo "<span>Sổ địa chỉ</span>";
-          echo "<div class='clr'></div>";
-          echo "<div class='address_register'>";
-            echo "<h4>Nguyễn Huy Hùng</h4>";
-            echo "<p>Địa chỉ: Cạnh số nhà 14, ngách 197/32, ngõ 197, Hoàng Mai, Phường Hoàng Văn Thụ, Quận Hoàng Mai, Hà Nội, Việt Nam</p>";
-            echo "<p>Điện thoại: 01678592766</p>";
-          echo "</div>";
-          echo "<div class='address_register'>";
-            echo "<h4>Nguyễn Huy Hùng</h4>";
-            echo "<p>Địa chỉ: Cạnh số nhà 14, ngách 197/32, ngõ 197, Hoàng Mai, Phường Hoàng Văn Thụ, Quận Hoàng Mai, Hà Nội, Việt Nam</p>";
-            echo "<p>Điện thoại: 01678592766</p>";
-          echo "</div>";
-          echo "<div class='address_register'>";
-            echo "<h4>Nguyễn Huy Hùng</h4>";
-            echo "<p>Địa chỉ: Cạnh số nhà 14, ngách 197/32, ngõ 197, Hoàng Mai, Phường Hoàng Văn Thụ, Quận Hoàng Mai, Hà Nội, Việt Nam</p>";
-            echo "<p>Điện thoại: 01678592766</p>";
-          echo "</div>";
-          echo "<div class='address_register'>";
-            echo "<h4>Nguyễn Huy Hùng</h4>";
-            echo "<p>Địa chỉ: Cạnh số nhà 14, ngách 197/32, ngõ 197, Hoàng Mai, Phường Hoàng Văn Thụ, Quận Hoàng Mai, Hà Nội, Việt Nam</p>";
-            echo "<p>Điện thoại: 01678592766</p>";
-          echo "</div>";
-          echo "<div class='address_register'>";
-            echo "<h4>Nguyễn Huy Hùng</h4>";
-            echo "<p>Địa chỉ: Cạnh số nhà 14, ngách 197/32, ngõ 197, Hoàng Mai, Phường Hoàng Văn Thụ, Quận Hoàng Mai, Hà Nội, Việt Nam</p>";
-            echo "<p>Điện thoại: 01678592766</p>";
-          echo "</div>";
+        echo "<div id='address_list' style='position: relative;'>";
+
+          echo "<span>Sổ địa chỉ</span> <a href='index.php?controller=user&resources=address&action=new' class='btn btn-success' style='position: absolute; padding: 3px; right: 14px;'>Tạo địa chỉ mới</a>";
+
+          echo "<div class='clr' style='height: 10px;'></div>";
+
+          if($data['addr'] != ""){
+            foreach ($data['addr'] as $item) {
+              echo "<div class='address_register' style='position: relative;'>";
+                echo "<h4>$item[fullname]</h4>";
+                echo "<p>Địa chỉ: $item[address], $item[comm_name], $item[dist_name], $item[prov_name]</p>";
+                echo "<p>Điện thoại: $item[telephone]</p>";
+                echo "<a href='index.php?controller=user&resources=address&action=destroy&addrid=$item[addrid]' onclick='return check_delete_addr();' style='display: block; position: absolute; right: 50px; bottom: 12px;'><span class='icon_delete'></span></a>";
+                echo "<a href='index.php?controller=user&resources=address&action=edit&addrid=$item[addrid]' style='display: block; position: absolute; bottom: 10px; right: 5px;'><span class='btn btn-default' style='padding: 3px 5px;'>Sửa</span></a>";
+              echo "</div>";
+            }
+          } else {
+            echo "<div class='address_register' style='position: relative;'>";
+              echo "Chưa có sổ địa chỉ nào";
+            echo "</div>";
+          }
+
         echo "</div>";
       }
       ?>

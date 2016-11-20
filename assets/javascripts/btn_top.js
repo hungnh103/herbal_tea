@@ -1,4 +1,4 @@
-$(document).ready(function(){ 	
+$(document).ready(function(){
 	if($(".btn-top").length > 0){
 		$(window).scroll(function () {
 			var e = $(window).scrollTop();
@@ -13,5 +13,5 @@ $(document).ready(function(){
 				scrollTop: 0
 			})
 		})
-	}		
+	}
 });

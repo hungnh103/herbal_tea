@@ -14,5 +14,9 @@ if(isset($_SESSION['level']) && ($_SESSION['level'] == 2)){
     require("controllers/salesmanager/mainpage.php");
   }
 }else{
-  redirect("http://localhost/www/herbal_tea/");
+  if(isset($_SESSION['level']) && ($_SESSION['level'] == 3)){
+    redirect("http://localhost/www/herbal_tea/index.php?controller=admin");
+  }else{
+    redirect("http://localhost/www/herbal_tea/");
+  }
 }
