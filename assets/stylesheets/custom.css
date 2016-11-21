@@ -184,8 +184,12 @@ table thead th{
   background: url(../images/system/mini_account.png) no-repeat 7px 11px;
 }
 
-.mini_cart{
-  background: url(../images/system/mini_cart.png) no-repeat 7px 11px;
+.mini_invoices{
+  background: url(../images/system/mini_invoices.png) no-repeat 7px 11px;
+}
+
+.mini_remarks{
+  background: url(../images/system/mini_remarks.png) no-repeat 7px 11px;
 }
 
 .mini_logout{

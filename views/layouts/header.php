@@ -41,7 +41,8 @@
                 echo "<li class='mini_menu'><img src='assets/images/users/$_SESSION[avatar]'>";
                   echo "<ul>";
                     echo "<li style='border-top: none;'><a href='index.php?controller=user&uid=$_SESSION[uid]' class='mini_account'>Tài khoản</a></li>";
-                    echo "<li><a href='#' class='mini_cart'>Giỏ hàng</a></li>";
+                    echo "<li><a href='index.php?controller=user&resources=invoice&action=index&uid=$_SESSION[uid]' class='mini_invoices'>Đơn hàng</a></li>";
+                    echo "<li><a href='#' class='mini_remarks'>Đánh giá</a></li>";
                     echo "<li><a href='index.php?controller=session&action=destroy' class='mini_logout'>Đăng xuất</a></li>";
                   echo "</ul>";
                 echo "</li>";

@@ -2,6 +2,7 @@
 if(isset($_GET['resources'])){
   switch($_GET['resources']){
     case "address": require("controllers/user/address/address.php"); break;
+    case "invoice": require("controllers/user/invoice/invoice.php"); break;
   }
 }else{
   if(isset($_GET['action'])){

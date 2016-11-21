@@ -34,4 +34,16 @@ class Model_Invoice extends Model{
     $this->where("iid = '$iid'");
     $this->delete($this->_table);
   }
+
+  public function getInvoiceByUid($uid){
+    $this->where("uid = '$uid'");
+    $this->getData($this->_table);
+    return $this->fetchAll();
+  }
+
+  public function getInvoiceByIid($iid){
+    $this->where("iid = '$iid'");
+    $this->getData($this->_table);
+    return $this->fetch();
+  }
 }

@@ -457,3 +457,58 @@
   font-size: 14pt;
   padding: 30px 0px;
 }
+
+/**********************************************/
+/************** USER: VIEW INVOICES ***********/
+/**********************************************/
+#my_invoices_list{
+  width: 1000px;
+  margin: auto;
+}
+
+#my_invoices_list p{
+  font-weight: bold;
+  font-size: 12pt;
+  margin: 20px 0px;
+}
+
+#my_invoices_list table a:hover{
+  text-decoration: underline;
+}
+
+/**********************************************/
+/********** USER: VIEW INVOICE DETAIL *********/
+/**********************************************/
+#view_invoice_detail{
+  width: 1000px;
+  margin: auto;
+  position: relative;
+}
+
+#view_invoice_detail > a{
+  padding: 3px;
+  position: absolute;
+  top: 0px;
+  left: 20px;
+}
+
+#view_invoice_detail .products_list{
+  width: 600px;
+  margin: 60px 0px 0px 50px;
+  float: left;
+}
+
+#view_invoice_detail .products_list table a:hover{
+  text-decoration: underline;
+}
+
+#view_invoice_detail .respective_addr{
+  width: 300px;
+  float: right;
+  margin-top: 60px;
+}
+
+#view_invoice_detail .respective_addr div{
+  border: 1px dashed black;
+  padding: 5px;
+}
