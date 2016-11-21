@@ -8,7 +8,6 @@
             <li><a href="index.php?controller=salesmanager&resources=product">Kho hàng</a></li>
             <li><a href="index.php?controller=salesmanager&resources=effect">Công dụng nổi bật</a></li>
             <li><a href="index.php?controller=salesmanager&resources=invoice">Đơn hàng</a></li>
-            <li><a href="index.php?controller=salesmanager&resources=request">Người dùng yêu cầu</a></li>
           </ul>
         </li>
         <li><a href="index.php?controller=salesmanager&resources=news">Tin tức</a></li>
@@ -34,6 +33,7 @@
           switch($_GET['resources']){
             case "product": echo "<li><a href='index.php?controller=salesmanager&resources=product'>> Kho hàng</a></li>"; break;
             case "effect": echo "<li><a href='index.php?controller=salesmanager&resources=effect'>> Công dụng nổi bật</a></li>"; break;
+            case "invoice": echo "<li><a href='index.php?controller=salesmanager&resources=invoice'>> Đơn hàng</a></li>"; break;
           }
         }
 
@@ -42,6 +42,7 @@
             case "new": echo "<li>> Thêm</li>"; break;
             case "edit": echo "<li>> Sửa</li>"; break;
             case "quantity_update": echo "<li>> Cập nhật số lượng</li>"; break;
+            case "show": echo "<li>>Xem chi tiết</li>"; break;
           }
         }
         ?>

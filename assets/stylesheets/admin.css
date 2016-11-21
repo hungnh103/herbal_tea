@@ -30,7 +30,7 @@
 }
 
 #users_list table{
-  width: 900px;
+  width: 820px;
 }
 
 #users_list .index, #users_list .email, #users_list .del, #users_list .check{
@@ -38,12 +38,7 @@
 }
 
 #users_list .name{
-  width: 120px;
-  padding-bottom: 17px;
-}
-
-#users_list .coin{
-  width: 100px;
+  width: 170px;
   padding-bottom: 17px;
 }
 

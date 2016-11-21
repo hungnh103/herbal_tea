@@ -14,7 +14,6 @@ $data = $muser->listUser();
       <th class='index'>STT</th>
       <th class='name'>Tên</th>
       <th class='email'>Email</th>
-      <th class='coin'>Xu tích luỹ</th>
       <th class='level'>Loại tài khoản</th>
       <th class='change_level'>Chuyển đổi tài khoản</th>
       <th class='del'>Xoá</th>
@@ -36,19 +35,16 @@ $data = $muser->listUser();
         echo "<td>$item[name]</td>";
         echo "<td>$item[email]</td>";
         if($item['level'] == 1){
-          echo "<td>$item[accumulative_coins]</td>";
           echo "<td>Thường</td>";
           echo "<td><a href='index.php?controller=admin/user&action=edit&uid=$item[uid]&level=$item[level]' onclick='return check_change_level();'><span class='icon_change_level'></span></td>";
           echo "<td><a href='index.php?controller=admin/user&action=destroy&uid=$item[uid]' onclick='return check_delete();'><span class='icon_delete'></span></a></td>";
           echo "<td><input type='checkbox'></td>";
         }elseif($item['level'] == 2){
-          echo "<td>&nbsp;</td>";
           echo "<td style='color: blue; font-weight: bold;'>Quản lý bán hàng</td>";
           echo "<td><a href='index.php?controller=admin/user&action=edit&uid=$item[uid]&level=$item[level]' onclick='return check_change_level();'><span class='icon_change_level'></span></td>";
           echo "<td>&nbsp;</td>";
           echo "<td>&nbsp;</td>";
         }else{
-          echo "<td>&nbsp;</td>";
           echo "<td style='color: red; font-weight: bold;'>Quản trị viên</td>";
           echo "<td>&nbsp;</td>";
           echo "<td>&nbsp;</td>";

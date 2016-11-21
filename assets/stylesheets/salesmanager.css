@@ -225,3 +225,73 @@
   padding: 7px;
   float: left;
 }
+
+/***********************************/
+/********* MANAGE INVOICES *********/
+/***********************************/
+#all_invoices .view_invoice_detail:hover{
+  text-decoration: underline;
+}
+
+.success_delivery, .in_buying, .ordered, .in_progressing{
+  padding: 5px;
+  border-radius: 5px;
+  color: #fff;
+  font-weight: bold;
+}
+
+.success_delivery{
+  background-color: #5CB85C;
+}
+
+.in_buying{
+  background-color: red;
+}
+
+.ordered{
+  background-color: #0362C5;
+}
+
+.in_progressing{
+  background-color: #EC971F;
+}
+
+#all_invoices table .atm_card, #all_invoices table .money{
+  display: block;
+  width: 16px;
+  height: 16px;
+  background: url(../images/system/atm_card.png) no-repeat;
+  margin-left: 35px;
+}
+
+#all_invoices table .atm_card{
+  background: url(../images/system/atm_card.png) no-repeat;
+}
+
+#all_invoices table .money{
+  background: url(../images/system/money.png) no-repeat;
+}
+
+#left_list_invoice_detail{
+  float: left;
+  width: 550px;
+}
+
+
+
+
+#right_list_invoice_detail{
+  float: right;
+  width: 320px;
+}
+
+#right_list_invoice_detail > p{
+  font-weight: bold;
+  font-size: 11pt;
+}
+
+#right_list_invoice_detail > div{
+  border: 1px dashed black;
+  padding: 5px;
+  margin-bottom: 20px;
+}

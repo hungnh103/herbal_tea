@@ -20,12 +20,16 @@ if(isset($_GET['controller'])){
     redirect("index.php?controller=admin");
   }else{
     $mproduct = new Model_Product;
+
     $mproduct->order("pid", "DESC");
     $mproduct->limit("12");
     $data['main_right'] = $mproduct->listProduct();
-    $mproduct->order("sold, pid", "DESC");
+
+    $mproduct->order("sold", "DESC");
+    $mproduct->where("sold <> '0'");
     $mproduct->limit("6");
     $data['main_left'] = $mproduct->listProduct();
+
     loadview("static_pages/home", $data);
   }
 }

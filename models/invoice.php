@@ -46,4 +46,17 @@ class Model_Invoice extends Model{
     $this->getData($this->_table);
     return $this->fetch();
   }
+
+  public function listInvoice(){
+    $this->getData($this->_table);
+    return $this->fetchAll();
+  }
+
+  public function updateInvoiceStatus($iid){
+    $this->select("status");
+    $status = $this->getInvoiceByIid($iid);
+    $status['status'] += 1;
+    $update_data = array("status" => $status['status']);
+    $this->updateInvoice($update_data);
+  }
 }
