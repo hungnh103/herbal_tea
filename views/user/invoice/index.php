@@ -4,10 +4,11 @@ loadview("layouts/header");
 
 <div id="my_invoices_list">
   <p>Danh sách đơn hàng của bạn</p>
-  <table class='table table-bordered table-hover' style='width: 530px; margin-bottom: 30px;'>
+  <table class='table table-bordered table-hover' style='width: 650px; margin-bottom: 30px;'>
     <thead>
       <tr>
         <th style='width: 100px;'>Mã đơn hàng</th>
+        <th>Thời điểm đặt hàng</th>
         <th style='width: 150px;'>Số lượng sản phẩm</th>
         <th>Tổng cộng</th>
         <th style='width: 160px;'>Trạng thái</th>
@@ -19,6 +20,11 @@ loadview("layouts/header");
       foreach ($data as $item) {
         echo "<tr>";
           echo "<td><a href='index.php?controller=user&resources=invoice&action=show&iid=$item[iid]'>$item[iid]</a></td>";
+          if (empty($item['order_date'])) {
+            echo "<td>cập nhật sau</td>";
+          } else {
+            echo "<td>".date("d/m/Y", strtotime($item['order_date']))."</td>";
+          }
           echo "<td>".number_format($item['products_amount'])."</td>";
           echo "<td>".number_format($item['total'])." ₫</td>";
           if ($item['status'] == 1) {

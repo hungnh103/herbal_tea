@@ -28,9 +28,10 @@ loadview("layouts/header");
         $stt++;
       }
       ?>
-        <tr>
-          <td colspan='3' style="font-weight: bold;">Tổng cộng</td>
-          <td style="color: #f00; font-weight: bold;"><?php echo number_format($data['invoice']['total']); ?> ₫</td>
+        <tr style="font-weight: bold;">
+          <td colspan='2'>Tổng cộng</td>
+          <td><?php echo number_format($data['invoice']['products_amount']); ?></td>
+          <td style="color: #f00;"><?php echo number_format($data['invoice']['total']); ?> ₫</td>
         </tr>
       </tbody>
     </table>

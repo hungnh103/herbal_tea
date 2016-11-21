@@ -45,10 +45,12 @@ if (isset($_POST['ok'])) {
 
   if ($payment_method && $account_holder && $account_number && $bank) {
     // update invoices table
+
     $update_invoices = array(
                       "payment_method" => $payment_method,
                       "status" => "2",
-                      "addrid" => $data['data']['addrid']
+                      "addrid" => $data['data']['addrid'],
+                      "order_date" => date("Y:m:d H:i:s")
                     );
     if ($payment_method == 2) {
       $update_invoices['account_holder'] = $account_holder;

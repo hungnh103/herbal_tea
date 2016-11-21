@@ -4,7 +4,7 @@ $data['addr'] = "";
 $iid = $_GET['iid'];
 
 $minvoice = new Model_Invoice;
-$minvoice->select("total, addrid");
+$minvoice->select("products_amount, total, addrid");
 $data['invoice'] = $minvoice->getInvoiceByIid($iid);
 if ($data['invoice']['addrid'] != 0) {
   $maddressregister = new Model_AddressRegister;

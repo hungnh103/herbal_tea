@@ -14,3 +14,5 @@ function redirect($url){
   header("location:$url");
   exit();
 }
+
+date_default_timezone_set("Asia/Ho_Chi_Minh");
