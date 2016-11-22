@@ -126,6 +126,7 @@
 #your_remark{
   padding: 20px;
   width: 750px;
+  position: relative;
 }
 
 #your_remark span{
@@ -133,6 +134,28 @@
   font-weight: bold;
   font-size: 14pt;
   border-bottom: 1px solid #E7E7E7;
+}
+
+#your_remark #login_to_remark{
+  border-radius: 3px;
+  background-color: #1E9F2F;
+  width: 207px;
+  padding: 2px;
+  margin: 0;
+  font-size: 11pt;
+  font-weight: normal;
+  float: left;
+  position: absolute;
+  top: 19px;
+  left: 190px;
+}
+
+#your_remark #login_to_remark a{
+  color: #fff;
+}
+
+#your_remark #login_to_remark a:hover{
+  text-decoration: underline;
 }
 
 #your_remark form{
@@ -145,6 +168,19 @@
 
 #your_remark table td{
   padding: 5px;
+}
+
+#your_remark button{
+  border: none;
+  width: 23px;
+  height: 24px;
+  float: left;
+  padding: 3px;
+  background: url(../images/system/star.png) no-repeat 3px 5px;
+}
+
+#your_remark button:focus{
+  outline: 0;
 }
 
 #your_remark table td textarea{
