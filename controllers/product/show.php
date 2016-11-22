@@ -38,7 +38,8 @@ if(isset($_POST['ok'])) {
                     "rating" => $score,
                     "content" => $content,
                     "uid" => $_SESSION['uid'],
-                    "pid" => $pid
+                    "pid" => $pid,
+                    "created_at" => date("Y:m:d")
                   );
 
     $mremark->addRemark($input_data);

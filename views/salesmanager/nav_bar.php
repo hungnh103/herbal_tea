@@ -12,7 +12,7 @@
         </li>
         <li><a href="index.php?controller=salesmanager&resources=news">Tin tức</a></li>
         <li><a href="index.php?controller=salesmanager&resources=ask_and_answer">Hỏi đáp</a></li>
-        <li><a href="index.php?controller=salesmanager&resources=remark">Bình luận</a></li>
+        <li><a href="index.php?controller=salesmanager&resources=remark">Ý kiến người dùng</a></li>
       </ul>
     </div>
 
@@ -35,6 +35,7 @@
             case "effect": echo "<li><a href='index.php?controller=salesmanager&resources=effect'>> Công dụng nổi bật</a></li>"; break;
             case "invoice": echo "<li><a href='index.php?controller=salesmanager&resources=invoice'>> Đơn hàng</a></li>"; break;
             case "news": echo "<li><a href='index.php?controller=salesmanager&resources=news'>> Tin tức</a></li>"; break;
+            case "remark": echo "<li><a href='index.php?controller=salesmanager&resources=remark'>> Ý kiến người dùng</a></li>"; break;
           }
         }
 

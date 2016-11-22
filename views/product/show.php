@@ -41,11 +41,30 @@ loadview("layouts/header");
           echo "<td colspan='2'>Chỉ còn ".$data['product']['quantity']." sản phẩm</td>";
         echo "</tr>";
       }
+
+      $rating_times = $data['product']['rating_times'];
+      echo "<tr>";
+        if ($rating_times == 0) {
+          echo "<td>";
+          for ($i=1; $i<6; $i++){
+            echo "<img src='assets/images/system/gray_star.png' style='width: 16px; height: 16px;'>";
+          }
+          echo "</td>";
+          echo "<td>(0 đánh giá)</td>";
+        } else {
+          echo "<td>";
+            for ($i=1; $i<=$rating_times; $i++) {
+              echo "<img src='assets/images/system/star.png' style='width: 16px; height: 16px;'>";
+            }
+            for ($i=$rating_times+1; $i<6; $i++) {
+              echo "<img src='assets/images/system/gray_star.png' style='width: 16px; height: 16px;'>";
+            }
+          echo "</td>";
+          echo "<td>($rating_times đánh giá)</td>";
+        }
+      echo "</tr>";
       ?>
-      <tr>
-        <td>5 sao 5 sao</td>
-        <td>(1234 đánh giá)</td>
-      </tr>
+
       <?php
       if(isset($_SESSION['level'])){
         echo "<tr>";
