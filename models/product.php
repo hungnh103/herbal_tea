@@ -59,4 +59,14 @@ class Model_Product extends Model{
     $this->updateProduct($update_data);
     return $output['oeid'];
   }
+
+  public function updateAfterAcceptRemark($pid, $score){
+    $this->select("rating, rating_times");
+    $current_status = $this->getProductById($pid);
+    $new_times = $current_status['rating_times'] + 1;
+    $new_total_score = $current_status['rating_times'] * $current_status['rating'] + $score;
+    $new_score = round($new_total_score / $new_times);
+    $update_data = array("rating" => $new_score, "rating_times" => $new_times);
+    $this->updateProduct($update_data);
+  }
 }

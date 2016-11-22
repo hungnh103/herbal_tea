@@ -7,8 +7,24 @@ class Model_Remark extends Model{
   }
 
   public function getRemarkByPid($pid){
-    $this->where("pid = '$pid'");
+    $condition = array("pid=" => $pid, "is_approved=" => "1");
+    $this->where($condition);
     $this->getData($this->_table);
     return $this->fetchAll();
+  }
+
+  public function listRemark(){
+    $this->getData($this->_table);
+    return $this->fetchAll();
+  }
+
+  public function updateRemark($data){
+    $this->update($this->_table, $data);
+  }
+
+  public function getRemarkByRemid($remid){
+    $this->where("remid = '$remid'");
+    $this->getData($this->_table);
+    return $this->fetch();
   }
 }
