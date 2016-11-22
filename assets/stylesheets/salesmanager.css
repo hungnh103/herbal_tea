@@ -277,9 +277,6 @@
   width: 550px;
 }
 
-
-
-
 #right_list_invoice_detail{
   float: right;
   width: 320px;
@@ -294,4 +291,27 @@
   border: 1px dashed black;
   padding: 5px;
   margin-bottom: 20px;
+}
+
+/*******************************/
+/********* MANAGE NEWS *********/
+/*******************************/
+#news_form{
+  position: relative;
+}
+
+#news_form table{
+  margin: 0px;
+}
+
+#news_form table td{
+  text-align: left;
+  padding: 5px;
+}
+
+#news_form .error{
+  position: absolute;
+  top: 0px;
+  right: 50px;
+  padding: 0;
 }
