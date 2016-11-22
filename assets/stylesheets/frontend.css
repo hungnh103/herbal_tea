@@ -512,3 +512,35 @@
   border: 1px dashed black;
   padding: 5px;
 }
+
+/*******************************/
+/********** SHOW NEWS **********/
+/*******************************/
+#list_news{
+  width: 700px;
+  margin: 30px 0 0 20px;
+}
+
+#list_news .news_item{
+  padding: 5px 5px 25px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #808080;
+}
+
+#list_news .news_item .poster{
+  float: left;
+}
+
+#list_news .news_item .news_abstract_info{
+  float: left;
+  padding-left: 30px;
+}
+
+#show_news{
+  width: 700px;
+  margin: 30px 0 0 20px;
+}
+
+#show_news #news_content{
+  margin-top: 30px;
+}

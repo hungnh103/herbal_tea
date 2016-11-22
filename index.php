@@ -12,6 +12,7 @@ if(isset($_GET['controller'])){
     case "salesmanager": require("controllers/salesmanager/salesmanager.php"); break;
     case "product": require("controllers/product/product.php"); break;
     case "cart": require("controllers/cart/cart.php"); break;
+    case "news": require("controllers/news/news.php"); break;
   }
 }else{
   if(isset($_SESSION['level']) && ($_SESSION['level'] == 2)){
@@ -29,6 +30,11 @@ if(isset($_GET['controller'])){
     $mproduct->where("sold <> '0'");
     $mproduct->limit("6");
     $data['main_left'] = $mproduct->listProduct();
+
+    $mnews = new Model_News;
+    $mnews->order("nid", "DESC");
+    $mnews->limit("3");
+    $data['news'] = $mnews->listNews();
 
     loadview("static_pages/home", $data);
   }
