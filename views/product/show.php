@@ -18,6 +18,7 @@ loadview("layouts/header");
     document.getElementById("hidden_amount").value = document.getElementById("amount").value;
   }
 </script>
+
 <div id="show_product">
   <div id="product_image">
     <img src="assets/images/products/<?php echo $data['product']['image']; ?>" />
@@ -97,84 +98,110 @@ loadview("layouts/header");
       ?>
     </div>
   </div>
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $("button").click(function(){
+        a = $(this).val();
+        for(i=1; i<=a; i++){
+          $(":first-child", "button[value='"+i+"']").hide();
+        }
+
+        b = parseInt(a) + 1;
+        for(i=b; i<=5; i++) {
+          $(":first-child", "button[value='"+i+"']").show();
+        }
+
+        $("#vote_result").val(a);
+      });
+    });
+  </script>
+
   <div id="remark_and_reply">
     <div id="your_remark">
       <span>Nhận xét của bạn</span>
-      <form>
-        <table>
-          <tr>
-            <td><b>1. Đánh giá của bạn về sản phẩm này:</b> *****</td>
-          </tr>
-          <tr>
-            <td><b>2. Viết bình luận của bạn:</b></td>
-          </tr>
+      <?php
+      if(!isset($_SESSION['level'])) {
+        echo "<span id='login_to_remark'><a href='index.php?controller=session&action=new'>Vui lòng đăng nhập để nhận xét</a></span>";
+      }
+      ?>
+      <div class="clr"></div>
+      <p style="font-style: italic; margin-top: 10px;">(Đánh giá và bình luận của bạn sẽ được ban quản trị website duyệt trước khi hiển thị)</p>
+      <table style="float: left;">
+        <tr>
+          <td><b style="display: block; float: left;">1. Đánh giá của bạn về sản phẩm này:</b>
+            <div style="float: left; margin: -6px 0 0 10px;">
+              <button value="1" <?php if(!isset($_SESSION['level'])) echo "disabled='disabled'"; ?>><img src="assets/images/system/gray_star.png"></button>
+              <button value="2" <?php if(!isset($_SESSION['level'])) echo "disabled='disabled'"; ?>><img src="assets/images/system/gray_star.png"></button>
+              <button value="3" <?php if(!isset($_SESSION['level'])) echo "disabled='disabled'"; ?>><img src="assets/images/system/gray_star.png"></button>
+              <button value="4" <?php if(!isset($_SESSION['level'])) echo "disabled='disabled'"; ?>><img src="assets/images/system/gray_star.png"></button>
+              <button value="5" <?php if(!isset($_SESSION['level'])) echo "disabled='disabled'"; ?>><img src="assets/images/system/gray_star.png"></button>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><b>2. Viết bình luận của bạn:</b></td>
+        </tr>
+        <form action="index.php?controller=product&action=show&pid=<?php echo $data['product']['pid']; ?>" method="post">
           <tr>
             <td>
-              <textarea cols="50" rows="8" class="form-control" placeholder="Bình luận của bạn về sản phẩm này"></textarea>
+              <textarea cols="50" rows="8" name="content" class="form-control" placeholder="Bình luận của bạn về sản phẩm này" <?php if(!isset($_SESSION['level'])) echo "disabled='disabled'"; ?>></textarea>
             </td>
           </tr>
           <tr>
-            <td style="text-align: right;"><input type="submit" name="ok" value="Gửi nhận xét" class="btn btn-info"></td>
+            <td style="text-align: right;">
+              <input type="hidden" name="score" id="vote_result" value="0">
+              <input type="submit" name="ok" value="Gửi nhận xét" class="btn btn-info" <?php if(!isset($_SESSION['level'])) echo "disabled='disabled'"; ?>>
+            </td>
           </tr>
-        </table>
-      </form>
+        </form>
+      </table>
+      <div class="error" style="float: right; padding: 0;">
+        <?php
+        if(!empty($data['error'])) {
+          echo "<ul>";
+          foreach ($data['error'] as $item) {
+            echo "<li>$item</li>";
+          }
+          echo "</ul>";
+        }
+        ?>
+      </div>
+
     </div>
+      <div class="clr"></div>
 
     <div id="remark_and_reply_list">
       <span>Khách hàng nhận xét về sản phẩm</span>
-
-      <div class="customer_remark">
-        <table>
-          <tr>
-            <td>
-              <img src="assets/images/users/default_avatar.png" style="margin: 20px 55px 10px;" />
-              <p style="margin: 0; font-weight: bold;">Nguyễn Huy Hùng</p>
-            </td>
-            <td style="border-left: 1px solid #E7E7E7; text-align: justify; padding: 0 35px; font-size: 11pt;">
-              Quyển này của GS Diamond hay, nói nhiều về cách hành xử của con người cổ và thực ra vẫn còn tồn tại nhiều ngày nay. Nói về vai trò của tổ chức và nhà nước. Nếu bạn thích quyển Súng vi trùng và thép thì cũng sẽ rất thích quyển này. Tuy nhiên là sách dịch nên đôi lúc đọc hơi dài dòng.
-               Sách của GS Diamond hay ở chỗ ông tiếp cận trực tiếp những nơi ông đề cận trực tiếp những nơi ông đề cập đến trong sách, cách viết chen lẫn ếhiên là sách dịch nên đôi lúc đọc hơi dài dòng.
-               Sách của GS Diamond hay ở chỗ ông tiếp cận trực tiếp những nơi ông đề cận trực tiếp những nơi ông đề cập đến trong sách, cách viết chen lẫn ếhiên là sách dịch nên đôi lúc đọc hơi dài dòng.
-               Sách của GS Diamond hay ở chỗ ông tiếp cận trực tiếp những nơi ông đề cận trực tiếp những nơi ông đề cập đến trong sách, cách viết chen lẫn ếp những nơi ông đề cập đến trong sách, cách viết chen lẫn kể những câu chuyện của ông làm người đọc không bị nhàm.
-            </td>
-          </tr>
-        </table>
-      </div>
-
-      <div class="customer_remark">
-        <table>
-          <tr>
-            <td>
-              <img src="assets/images/users/default_avatar.png" style="margin: 20px 55px 10px;" />
-              <p style="margin: 0; font-weight: bold;">Nguyễn Huy Hùng</p>
-            </td>
-            <td style="border-left: 1px solid #E7E7E7; text-align: justify; padding: 0 35px; font-size: 11pt;">
-              Quyển này của GS Diamond hay, nói nhiều về cách hành xử của con người cổ và thực ra vẫn còn tồn tại nhiều ngày nay. Nói về vai trò của tổ chức và nhà nước. Nếu bạn thích quyển Súng vi trùng và thép thì cũng sẽ rất thích quyển này. Tuy nhiên là sách dịch nên đôi lúc đọc hơi dài dòng.
-               Sách của GS Diamond hay ở chỗ ông tiếp cận trực tiếp những nơi ông đề cận trực tiếp những nơi ông đề cập đến trong sách, cách viết chen lẫn ếhiên là sách dịch nên đôi lúc đọc hơi dài dòng.
-               Sách của GS Diamond hay ở chỗ ông tiếp cận trực tiếp những nơi ông đề cận trực tiếp những nơi ông đề cập đến trong sách, cách viết chen lẫn ếhiên là sách dịch nên đôi lúc đọc hơi dài dòng.
-               Sách của GS Diamond hay ở chỗ ông tiếp cận trực tiếp những nơi ông đề cận trực tiếp những nơi ông đề cập đến trong sách, cách viết chen lẫn ếp những nơi ông đề cập đến trong sách, cách viết chen lẫn kể những câu chuyện của ông làm người đọc không bị nhàm.
-            </td>
-          </tr>
-        </table>
-      </div>
-
-      <div class="customer_remark">
-        <table>
-          <tr>
-            <td>
-              <img src="assets/images/users/default_avatar.png" style="margin: 20px 55px 10px;" />
-              <p style="margin: 0; font-weight: bold;">Nguyễn Huy Hùng</p>
-            </td>
-            <td style="border-left: 1px solid #E7E7E7; text-align: justify; padding: 0 35px; font-size: 11pt;">
-              Quyển này của GS Diamond hay, nói nhiều về cách hành xử của con người cổ và thực ra vẫn còn tồn tại nhiều ngày nay. Nói về vai trò của tổ chức và nhà nước. Nếu bạn thích quyển Súng vi trùng và thép thì cũng sẽ rất thích quyển này. Tuy nhiên là sách dịch nên đôi lúc đọc hơi dài dòng.
-               Sách của GS Diamond hay ở chỗ ông tiếp cận trực tiếp những nơi ông đề cận trực tiếp những nơi ông đề cập đến trong sách, cách viết chen lẫn ếhiên là sách dịch nên đôi lúc đọc hơi dài dòng.
-               Sách của GS Diamond hay ở chỗ ông tiếp cận trực tiếp những nơi ông đề cận trực tiếp những nơi ông đề cập đến trong sách, cách viết chen lẫn ếhiên là sách dịch nên đôi lúc đọc hơi dài dòng.
-               Sách của GS Diamond hay ở chỗ ông tiếp cận trực tiếp những nơi ông đề cận trực tiếp những nơi ông đề cập đến trong sách, cách viết chen lẫn ếp những nơi ông đề cập đến trong sách, cách viết chen lẫn kể những câu chuyện của ông làm người đọc không bị nhàm.
-            </td>
-          </tr>
-        </table>
-      </div>
-
-
+      <?php
+      if(empty($data['remark'])) {
+        echo "<p>Chưa có nhận xét nào về sản phẩm này</p>";
+      } else {
+        foreach ($data['remark'] as $item) {
+          echo "<div class='customer_remark'>";
+            echo "<table>";
+              echo "<tr>";
+                echo "<td>";
+                  echo "<img src='assets/images/users/$item[avatar]' style='margin: 20px 55px 10px;' />";
+                  echo "<p style='margin: 0; font-weight: bold;'>$item[name]</p>";
+                echo "</td>";
+                echo "<td style='border-left: 1px solid #E7E7E7; text-align: justify; padding: 0 35px; font-size: 11pt;'>";
+                  echo "<p>";
+                  for ($i=1; $i<=$item['rating']; $i++){
+                    echo "<img src='assets/images/system/star.png' style='width: 16px; height: 16px;'>";
+                  }
+                  for($i=$item['rating']+1; $i<=5; $i++){
+                    echo "<img src='assets/images/system/gray_star.png' style='width: 16px; height: 16px;'>";
+                  }
+                  echo "</p>";
+                  echo $item['content'];
+                echo "</td>";
+              echo "</tr>";
+            echo "</table>";
+          echo "</div>";
+        }
+      }
+      ?>
 
     </div>
   </div>
