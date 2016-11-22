@@ -34,6 +34,7 @@
             case "product": echo "<li><a href='index.php?controller=salesmanager&resources=product'>> Kho hàng</a></li>"; break;
             case "effect": echo "<li><a href='index.php?controller=salesmanager&resources=effect'>> Công dụng nổi bật</a></li>"; break;
             case "invoice": echo "<li><a href='index.php?controller=salesmanager&resources=invoice'>> Đơn hàng</a></li>"; break;
+            case "news": echo "<li><a href='index.php?controller=salesmanager&resources=news'>> Tin tức</a></li>"; break;
           }
         }
 
