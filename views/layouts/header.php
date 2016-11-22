@@ -15,6 +15,7 @@
   </head>
 
   <body>
+
     <div class="website">
       <div id="top">
         <div id="top_left">
@@ -28,6 +29,14 @@
           $(document).ready(function(){
             $("#navigation li").hover(function(){
               $(this).find("ul:first").toggle();
+            });
+
+            $("#navigation .mini_menu").mouseenter(function(){
+              $("#highlight").show();
+            });
+
+            $("#navigation .mini_menu").mouseleave(function(){
+              $("#highlight").hide();
             });
           });
         </script>
@@ -59,6 +68,8 @@
 
       </div>
       <!-- TOP -->
+      <div id="highlight"></div>
+
 
       <div class="clr"></div>
 

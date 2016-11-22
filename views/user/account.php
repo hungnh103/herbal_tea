@@ -45,14 +45,6 @@ if($_SESSION['level'] != 1){
             <td>Email:</td>
             <td><?php echo $data['data']['email']; ?></td>
           </tr>
-          <?php
-          if($data['data']['level'] == 1){
-            echo "<tr>";
-              echo "<td>Xu tích luỹ:</td>";
-              echo "<td>".$data['data']['accumulative_coins']."</td>";
-            echo "</tr>";
-          }
-          ?>
           <tr>
             <td>Loại tài khoản:</td>
             <td>

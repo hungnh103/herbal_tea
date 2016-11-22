@@ -98,6 +98,7 @@ table thead th{
   width: 1000px;
   margin: auto;
   background: #EFEFEF;
+  z-index: 17;
 }
 
 #top_left{
