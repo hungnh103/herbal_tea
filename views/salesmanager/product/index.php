@@ -42,10 +42,29 @@ loadview("salesmanager/nav_bar");
       <tr>
         <td><i>Tìm kiếm sản phẩm</i></td>
         <td><input type="text" name="" class="form-control" placeholder="Nhập tên sản phẩm" /></td>
-      </tr>
-      <tr>
-        <td></td>
         <td><input type="submit" name="ok" value="Tìm" class="btn btn-primary" /></td>
+      </tr>
+    </table>
+  </form>
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $("#import_submit").click(function(){
+        file_name = $("#import_file").val();
+        if(file_name == ""){
+          alert("Vui lòng chọn file để nhập dữ liệu");
+          return false;
+        }
+      });
+    });
+  </script>
+
+  <form id="import_product" action="import.php" method="post" enctype="multipart/form-data">
+    <table>
+      <tr>
+        <td><i>Nhập liệu từ file Excel</i></td>
+        <td><input type="file" name="import_data" id="import_file" /></td>
+        <td><input type="submit" name="ok" value="Nhập liệu" class="btn btn-primary" id="import_submit" /></td>
       </tr>
     </table>
   </form>
@@ -57,6 +76,7 @@ loadview("salesmanager/nav_bar");
 
 <div id="product_list">
   <a href="index.php?controller=salesmanager&resources=product&action=new" class="btn btn-success">Thêm</a>
+  <a href="export.php" class="btn btn-danger" style="margin-left: 30px;">Xuất dữ liệu ra file Excel</a>
   <table class="table table-hover table-bordered">
     <thead>
       <tr>

@@ -24,6 +24,10 @@ loadview("layouts/header");
         <td style="width: 300px;"><input type="password" name="txtpass" class="form-control"></td>
       </tr>
       <tr>
+        <td style="padding-top: 0;"></td>
+        <td style="padding-top: 0;"><a href="#">Quên mật khẩu?</a></td>
+      </tr>
+      <tr>
         <td></td>
         <td><input type="submit" name="ok" value="Đăng nhập" class="btn btn-info"></td>
       </tr>
