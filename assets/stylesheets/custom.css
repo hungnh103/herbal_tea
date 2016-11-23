@@ -496,6 +496,7 @@ table thead th{
   text-align: center;
   padding: 4px;
   border-radius: 5px;
+  height: 280px;
 }
 
 .product:hover{
@@ -507,7 +508,8 @@ table thead th{
   font-size: 12pt;
   color: #FD00FC;
   font-weight: bold;
-  margin: 5px 0;
+  margin: 5px auto;
+  width: 200px;
 }
 
 .product .product_price{

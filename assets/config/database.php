@@ -10,6 +10,7 @@ class Database{
   public function connect(){
     $this->_conn = mysql_connect($this->_hostname, $this->_userhost, $this->_passhost);
     mysql_select_db($this->_dbname, $this->_conn);
+    mysql_set_charset("utf8", $this->_conn);
   }
 
   public function disconnect(){

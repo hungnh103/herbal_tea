@@ -134,15 +134,13 @@
   font-size: 11pt;
 }
 
-#other_action #product_filter{
-  margin-left: 130px;
-}
-
-#other_action #search_product{
+#other_action #search_product, #other_action #import_product{
   margin-left: 20px;
 }
 
-
+#other_action #import_product input[type='file']{
+  width: 200px;
+}
 
 #product_list table{
   margin-top: 10px;

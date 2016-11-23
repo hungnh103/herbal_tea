@@ -24,7 +24,7 @@ loadview("layouts/header");
     <img src="assets/images/products/<?php echo $data['product']['image']; ?>" />
   </div>
   <div id="product_abstract_info">
-    <table>
+    <table style="width: 300px;">
       <tr>
         <td colspan="2"><h1><?php echo $data['product']['name']; ?></h1></td>
       </tr>
