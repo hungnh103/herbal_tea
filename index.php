@@ -27,7 +27,7 @@ if(isset($_GET['controller'])){
     $data['main_right'] = $mproduct->listProduct();
 
     $mproduct->order("sold", "DESC");
-    $mproduct->where("sold <> '0'");
+    $mproduct->where("sold > '0'");
     $mproduct->limit("6");
     $data['main_left'] = $mproduct->listProduct();
 

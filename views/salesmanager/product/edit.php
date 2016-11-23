@@ -6,7 +6,7 @@ loadview("salesmanager/nav_bar");
   <form action="index.php?controller=salesmanager&resources=product&action=edit&pid=<?php echo $data['product']['pid']; ?>" method="post" enctype="multipart/form-data">
     <table>
       <tr>
-        <td>Tên sản phẩm</td>
+        <td style="width: 130px;">Tên sản phẩm</td>
         <td><input type="text" name="txtname" class="form-control" style="width: 300px;" value="<?php echo $data['product']['name']; ?>" /></td>
       </tr>
       <tr>
@@ -55,6 +55,9 @@ loadview("salesmanager/nav_bar");
           <textarea rows="15" cols="70" class="form-control" style="resize: none;" name="description"><?php echo $data['product']['description']; ?></textarea>
         </td>
       </tr>
+      <script type="text/javascript">
+        CKEDITOR.replace('description');
+      </script>
       <tr>
         <td></td>
         <td><input type="submit" name="ok" value="Cập nhật thông tin sản phẩm" class="btn btn-primary" /></td>

@@ -17,10 +17,10 @@ loadview("salesmanager/nav_bar");
     <thead>
       <tr>
         <th style="width: 50px;">STT</th>
-        <th style="width: 90px; padding-bottom: 8px;">Thời điểm nhận xét</th>
+        <th style="width: 90px; padding-bottom: 8px;">Thời điểm bình luận</th>
         <th style="width: 160px;">Sản phẩm</th>
         <th style="width: 72px;">Đánh giá</th>
-        <th style="width: 100px;">Nội dung</th>
+        <th>Nội dung</th>
         <th style="width: 85px;">Trạng thái</th>
         <th style="width: 90px;">Duyệt</th>
       </tr>

@@ -80,7 +80,13 @@ loadview("layouts/header");
               echo "<a href='index.php?controller=product&action=show&pid=$item[pid]'><img src='assets/images/products/$item[image]'></a>";
             echo "</div>";
             echo "<div class='abstract_info'>";
-              echo "<a href='index.php?controller=product&action=show&pid=$item[pid]'>$item[name]</a><span>new</span>";
+            $input_day = date("Y/m/d", strtotime($item['created_at']));
+            $day = (strtotime(date("Y/m/d")) - strtotime($input_day)) / (60 * 60 * 24);
+            if ($day < 15) {
+              echo "<a href='index.php?controller=product&action=show&pid=$item[pid]'>$item[name]</a><img src='assets/images/system/new.gif' style='margin: 0 0 3px 5px;'>";
+            } else {
+              echo "<a href='index.php?controller=product&action=show&pid=$item[pid]'>$item[name]</a>";
+            }
               echo "<p></p>";
             echo "</div>";
           echo "</li>";

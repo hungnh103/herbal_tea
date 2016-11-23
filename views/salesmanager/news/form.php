@@ -34,6 +34,9 @@
           <textarea cols="80" rows="15" name="content" class="form-control" style="resize: none;"><?php if (isset($data['news'])) echo $data['news']['content']; ?></textarea>
         </td>
       </tr>
+      <script type="text/javascript">
+        CKEDITOR.replace("content");
+      </script>
       <tr>
         <td></td>
         <td><input type="submit" name="ok" value="<?php if(isset($data['news'])){ echo "Chỉnh sửa bài viết"; } else { echo "Thêm bài viết mới"; } ?>" class="btn btn-primary"></td>

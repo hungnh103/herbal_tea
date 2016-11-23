@@ -580,3 +580,16 @@
 #show_news #news_content{
   margin-top: 30px;
 }
+
+/***********************************************/
+/********** HIGHLIGHT HOVER MINI-MENU **********/
+/***********************************************/
+#highlight{
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  z-index: 16;
+  left: 0;
+  display: none;
+}

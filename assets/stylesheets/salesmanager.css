@@ -202,7 +202,7 @@
 
 #update_product_quantity{
   width: 400px;
-  margin: auto;
+  margin-left: 130px;
 }
 
 #update_product_quantity .error{

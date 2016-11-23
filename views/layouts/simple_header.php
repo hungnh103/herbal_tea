@@ -19,6 +19,7 @@
     }
     ?>
     <script type="text/javascript" src="assets/javascripts/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/ckeditor/ckeditor.js"></script>
 
   </head>
 
