@@ -2,7 +2,7 @@
 loadview("layouts/header");
 ?>
 
-<div id="my_invoices_list">
+<div id="my_invoices_list" style="min-height: 242px;">
   <p>Danh sách đơn hàng của bạn</p>
   <table class='table table-bordered table-hover' style='width: 650px; margin-bottom: 30px;'>
     <thead>
@@ -40,7 +40,7 @@ loadview("layouts/header");
       }
     } else {
       echo "<tr>";
-        echo "<td colspan='4'>Chưa có đơn hàng nào</td>";
+        echo "<td colspan='5'>Chưa có đơn hàng nào</td>";
       echo "</tr>";
     }
     ?>

@@ -1,7 +1,7 @@
 <?php
 loadview("layouts/header");
 ?>
-<div>
+<div style="min-height: 257px;">
   <form id="login_form" action="index.php?controller=session&action=new" method="post">
   <?php
   if(!empty($data['error'])){

@@ -22,7 +22,7 @@ if($_SESSION['level'] != 1){
   }
 </script>
 
-<div id="user_profile">
+<div id="user_profile" style="min-height: 365px;">
   <!-- Nav tabs -->
   <ul class="nav nav-tabs" role="tablist">
     <li role="presentation" <?php if(empty($data['error'])) echo "class='active'"; ?>><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Thông tin chung</a></li>

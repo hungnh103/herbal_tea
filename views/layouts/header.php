@@ -76,9 +76,9 @@
       <div id="header">
         <div id="logo"><a href="http://localhost/www/herbal_tea/"><img src="assets/images/system/logo.jpg"></a></div>
         <div id="search">
-          <form>
-            <input type='text' placeholder='Tìm kiếm sản phẩm...' class='form-control' />
-            <input type='submit' value='TÌM KIẾM' />
+          <form action='index.php?controller=product&action=search' method='post'>
+            <input type='text' name='keyword' placeholder='Nhập tên sản phẩm...' class='form-control' />
+            <input type='submit' name='ok' value='TÌM KIẾM' />
           </form>
         </div>
 
@@ -117,7 +117,7 @@
           <li><a href="index.php?controller=product">Trà thảo dược</a></li>
           <li><a href="index.php?controller=static_page&action=guide">Hướng dẫn mua hàng</a></li>
           <li><a href="index.php?controller=news">Tin tức</a></li>
-          <li><a href="#">Đăng ký làm đại lý</a></li>
+          <li><a href="index.php?controller=static_page&action=agency_register">Đăng ký làm đại lý</a></li>
           <li><a href="https://www.facebook.com/quynhphuongtrathaoduoc/" target="_blank">Fanpage</a></li>
           <li><a href="index.php?controller=static_page&action=intro">Giới thiệu</a></li>
         </ul>

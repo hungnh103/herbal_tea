@@ -40,7 +40,7 @@ loadview("layouts/simple_header");
       </select>
     </form>
   </div>
-  <div id="users_list">
+  <div id="users_list" style="min-height: 412px;">
     <table class="table table-hover table-bordered">
       <thead>
         <tr>

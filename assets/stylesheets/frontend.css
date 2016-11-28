@@ -593,3 +593,26 @@
   left: 0;
   display: none;
 }
+
+/************************************/
+/********** ASK AND ANSWER **********/
+/************************************/
+#aaa_left{
+  float: left;
+}
+
+#aaa_left table{
+  margin: 0;
+  width: 680px;
+}
+
+#aaa_left table td{
+  padding: 5px;
+  text-align: justify;
+  border-bottom: 1px solid #522525;
+}
+
+#aaa_right{
+  width: 300px;
+  float: right;
+}

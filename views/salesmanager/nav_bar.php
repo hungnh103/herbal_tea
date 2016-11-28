@@ -24,7 +24,7 @@
       });
     </script>
   </div>
-  <div id="right_content">
+  <div id="right_content" style="min-height: 489px;">
     <div id="sub_navbar">
       <ul>
         <li><a href="index.php?controller=salesmanager">Trang chính</a></li>
@@ -36,6 +36,7 @@
             case "invoice": echo "<li><a href='index.php?controller=salesmanager&resources=invoice'>> Đơn hàng</a></li>"; break;
             case "news": echo "<li><a href='index.php?controller=salesmanager&resources=news'>> Tin tức</a></li>"; break;
             case "remark": echo "<li><a href='index.php?controller=salesmanager&resources=remark'>> Ý kiến người dùng</a></li>"; break;
+            case "ask_and_answer": echo "<li><a href='index.php?controller=salesmanager&resources=ask_and_answer'>> Hỏi đáp</a></li>"; break;
           }
         }
 
@@ -44,7 +45,8 @@
             case "new": echo "<li>> Thêm</li>"; break;
             case "edit": echo "<li>> Sửa</li>"; break;
             case "quantity_update": echo "<li>> Cập nhật số lượng</li>"; break;
-            case "show": echo "<li>>Xem chi tiết</li>"; break;
+            case "show": echo "<li>> Xem chi tiết</li>"; break;
+            case "answer": echo "<li>> Trả lời</li>"; break;
           }
         }
         ?>

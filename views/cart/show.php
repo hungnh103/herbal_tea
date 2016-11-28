@@ -18,7 +18,7 @@ loadview("layouts/header");
   }
 </script>
 
-<div id="my_cart">
+<div id="my_cart" style="min-height: 252px;">
   <div id="pending_product">
     <span>
       <b>Giỏ hàng</b> (

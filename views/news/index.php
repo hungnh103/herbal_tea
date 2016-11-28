@@ -7,7 +7,7 @@ loadview("layouts/header");
   });
 </script>
 
-<div id="list_news">
+<div id="list_news" style="min-height: 252px;">
   <?php
   if (empty($data)) {
     echo "<p>Chưa có bài viết nào</p>";

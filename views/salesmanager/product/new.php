@@ -7,12 +7,12 @@ loadview("salesmanager/nav_bar");
     <table>
       <tr>
         <td style="width: 130px;">Tên sản phẩm</td>
-        <td><input type="text" name="txtname" class="form-control" style="width: 300px;" /></td>
+        <td><input type="text" name="txtname" class="form-control" style="width: 400px;" /></td>
       </tr>
       <tr>
         <td>Công dụng nổi bật</td>
         <td>
-          <select name="outstanding_effect" class="form-control" style="width: 150px;">
+          <select name="outstanding_effect" class="form-control" style="width: 400px;">
             <?php
             foreach($data['data'] as $item){
               echo "<option value='$item[oeid]'>$item[content]</option>";
