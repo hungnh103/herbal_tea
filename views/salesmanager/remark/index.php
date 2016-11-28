@@ -46,7 +46,7 @@ loadview("salesmanager/nav_bar");
             case "4": echo "<td><span class='four_star'>4 sao</span></td>"; break;
             case "5": echo "<td><span class='five_star'>5 sao</span></td>"; break;
           }
-          echo "<td>$item[content]</td>";
+          echo "<td style='text-align: justify;'>$item[content]</td>";
           $status = $item['is_approved'];
           switch ($status) {
             case "0":

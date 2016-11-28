@@ -13,6 +13,7 @@ if(isset($_GET['controller'])){
     case "product": require("controllers/product/product.php"); break;
     case "cart": require("controllers/cart/cart.php"); break;
     case "news": require("controllers/news/news.php"); break;
+    case "ask_and_answer": require("controllers/ask_and_answer/ask_and_answer.php"); break;
   }
 }else{
   if(isset($_SESSION['level']) && ($_SESSION['level'] == 2)){

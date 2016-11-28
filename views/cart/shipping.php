@@ -2,7 +2,7 @@
 loadview("layouts/header");
 ?>
 
-<div id="cart_shipping">
+<div id="cart_shipping" style="min-height: 257px;">
   <p style="font-size: 12pt; font-weight: bold;">Bước 2. Chọn địa chỉ giao hàng</p>
 
   <?php

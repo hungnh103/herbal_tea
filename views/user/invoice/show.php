@@ -2,7 +2,7 @@
 loadview("layouts/header");
 ?>
 
-<div id="view_invoice_detail">
+<div id="view_invoice_detail" style="min-height: 257px;">
   <a href="index.php?controller=user&resources=invoice&action=index&uid=17" class="btn btn-info">← Danh sách hoá đơn</a>
   <div class="products_list">
     <table class="table table-hover table-bordered">

@@ -27,7 +27,7 @@ loadview("layouts/header");
             echo "<div class='item'>";
               echo "<a href='index.php?controller=news&action=show&nid=$item[nid]'><img src='assets/images/news/$item[poster]' style='width: 630px; height: 300px;'></a>";
               echo "<div class='carousel-caption'>";
-                echo "<h2>$item[title]</h2>";
+                echo "<h2 style='padding: 5px; border-radius: 15px; background-color: rgba(0, 0, 0, 0.5);'>$item[title]</h2>";
               echo "</div>";
             echo "</div>";
           }
@@ -51,7 +51,7 @@ loadview("layouts/header");
 
   <div id="ads">
     <div id="up_ads">
-      <a href=""><img src="assets/images/system/consult.png"></a>
+      <a href="index.php?controller=ask_and_answer"><img src="assets/images/system/consult.png"></a>
     </div>
     <div id="down_ads">
       <p>Đăng ký nhận thông báo từ website</p>

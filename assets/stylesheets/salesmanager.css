@@ -384,3 +384,19 @@
 .icon_abort{
   background: url(../images/system/abort.png) no-repeat;
 }
+
+/*************************************/
+/********* MANAGE ASK-ANSWER *********/
+/*************************************/
+#question_answer_list table .reply{
+  display: block;
+  width: 16px;
+  height: 16px;
+  background: url(../images/system/ask.png) no-repeat;
+  margin: auto;
+}
+
+#reply_question table td{
+  padding: 5px;
+  text-align: left;
+}

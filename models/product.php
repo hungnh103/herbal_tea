@@ -69,4 +69,11 @@ class Model_Product extends Model{
     $update_data = array("rating" => $new_score, "rating_times" => $new_times);
     $this->updateProduct($update_data);
   }
+
+  public function searchProduct($keyword){
+    $this->select("pid, name, price, image");
+    $this->where("name LIKE '%$keyword%'");
+    $this->getData($this->_table);
+    return $this->fetchAll();
+  }
 }

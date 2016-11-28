@@ -52,11 +52,12 @@ loadview("layouts/header");
           echo "</td>";
           echo "<td>(0 đánh giá)</td>";
         } else {
+          $rating = $data['product']['rating'];
           echo "<td>";
-            for ($i=1; $i<=$rating_times; $i++) {
+            for ($i=1; $i<=$rating; $i++) {
               echo "<img src='assets/images/system/star.png' style='width: 16px; height: 16px;'>";
             }
-            for ($i=$rating_times+1; $i<6; $i++) {
+            for ($i=$rating+1; $i<6; $i++) {
               echo "<img src='assets/images/system/gray_star.png' style='width: 16px; height: 16px;'>";
             }
           echo "</td>";

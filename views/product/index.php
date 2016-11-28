@@ -1,7 +1,7 @@
 <?php
 loadview("layouts/header");
 ?>
-<div id="list_products_page">
+<div id="list_products_page" style="min-height: 252px;">
   <div id="products_filter">
     <form>
       <span>Hiển thị sản phẩm theo công dụng nổi bật</span>

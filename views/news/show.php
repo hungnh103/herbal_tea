@@ -2,7 +2,7 @@
 loadview("layouts/header");
 ?>
 
-<div id="show_news">
+<div id="show_news" style="min-height: 252px;">
   <?php
   echo "<h1 style='font-size: 20pt;'>$data[title]</h1>";
   $timestamp = strtotime($data['created_at']);
