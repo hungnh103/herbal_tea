@@ -93,9 +93,6 @@ class Model extends Database{
     }
   }
 
-  // bat dau cai dat cac cau truy van
-  // ********************************
-  // ********************************
   public function insert($table, $data){
     $column = implode(", ", array_keys($data));
     $value = array_values($data);
