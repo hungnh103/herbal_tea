@@ -13,9 +13,9 @@ $data['items_amount'] = $mproduct->num_rows();
 $data['page'] = ceil($data['items_amount'] / $per_page);
 $mproduct->order("pid", "DESC");
 if(isset($_GET['page'])) {
-  $start = 12 * ($_GET['page'] - 1);
-  $mproduct->limit($per_page, $start);
   $data['current_page'] = $_GET['page'];
+  $start = $per_page * ($data['current_page'] - 1);
+  $mproduct->limit($per_page, $start);
 } else {
   $mproduct->limit($per_page);
   $data['current_page'] = 1;
