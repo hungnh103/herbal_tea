@@ -3,11 +3,19 @@ loadview("layouts/simple_header");
 loadview("salesmanager/nav_bar");
 ?>
 <script type="text/javascript">
-  function check_delete(){
-    if(!window.confirm("Chắc chắn muốn xoá công dụng này?")){
-      return false;
-    }
-  }
+  $(document).ready(function(){
+    $(".icon_delete").click(function(){
+      var products_amount = $(this).next("input[type='hidden']").val();
+      if (products_amount > 0) {
+        alert("Không thể xoá công dụng đang chứa sản phẩm");
+        return false;
+      } else {
+        if(!window.confirm("Chắc chắn muốn xoá công dụng này?")){
+          return false;
+        }
+      }
+    });
+  });
 </script>
 
 <div id="effects_list">
@@ -40,7 +48,7 @@ loadview("salesmanager/nav_bar");
             if($item['oeid'] == 1){
               echo "<td>&nbsp;</td>";
             }else{
-              echo "<td><a href='index.php?controller=salesmanager&resources=effect&action=destroy&oeid=$item[oeid]' onclick='return check_delete();'><span class='icon_delete'></span></a></td>";
+              echo "<td><a href='index.php?controller=salesmanager&resources=effect&action=destroy&oeid=$item[oeid]'><span class='icon_delete'></span><input type='hidden' value='$item[products_amount]'></a></td>";
             }
           echo "</tr>";
 

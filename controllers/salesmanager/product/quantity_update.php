@@ -3,6 +3,7 @@ $pid = $_GET['pid'];
 $mproduct = new Model_Product;
 $mproduct->select("pid, name, quantity, oeid");
 $data['data'] = $mproduct->getProductById($pid);
+$data['current_page'] = $_GET['page'];
 
 if(isset($_POST['ok'])){
   $quantity = $change = "";
@@ -22,7 +23,7 @@ if(isset($_POST['ok'])){
     $mproduct->updateProductAmount($pid, $quantity, $change);
     $meffect = new Model_Effect;
     $meffect->changeAmountWhenUpdateProductAmount($data['data']['oeid'], $quantity, $change);
-    redirect("index.php?controller=salesmanager&resources=product&action=index");
+    redirect("index.php?controller=salesmanager&resources=product&page=$data[current_page]");
   }
 }
 

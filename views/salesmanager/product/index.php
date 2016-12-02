@@ -3,9 +3,19 @@ loadview("layouts/simple_header");
 loadview("salesmanager/nav_bar");
 ?>
 <script type="text/javascript">
-  function check_delete(){
-    if(!window.confirm("Chắc chắn muốn xoá sản phẩm này?")) return false;
-  }
+  $(document).ready(function(){
+    $(".icon_delete").click(function(){
+      var sold = $(this).next("input[type='hidden']").val();
+      if (sold > 0) {
+        alert("Không thể xoá sản phẩm đã được bán ra");
+        return false;
+      } else {
+        if(!window.confirm("Chắc chắn muốn xoá sản phẩm này?")){
+          return false;
+        }
+      }
+    });
+  });
 </script>
 <div id="other_action">
   <form id="product_filter">
@@ -123,9 +133,9 @@ loadview("salesmanager/nav_bar");
 
             echo "<td>".number_format($item['sold'])."</td>";
             echo "<td>".number_format($item['quantity'])."</td>";
-            echo "<td><a href='index.php?controller=salesmanager&resources=product&action=quantity_update&pid=$item[pid]'><span class='icon_update'></span></a></td>";
-            echo "<td><a href='index.php?controller=salesmanager&resources=product&action=edit&pid=$item[pid]'><span class='icon_edit'></span></a></td>";
-            echo "<td><a href='index.php?controller=salesmanager&resources=product&action=destroy&pid=$item[pid]' onclick='return check_delete();'><span class='icon_delete'></span></a></td>";
+            echo "<td><a href='index.php?controller=salesmanager&resources=product&action=quantity_update&pid=$item[pid]&page=$data[current_page]'><span class='icon_update'></span></a></td>";
+            echo "<td><a href='index.php?controller=salesmanager&resources=product&action=edit&pid=$item[pid]&page=$data[current_page]'><span class='icon_edit'></span></a></td>";
+            echo "<td><a href='index.php?controller=salesmanager&resources=product&action=destroy&pid=$item[pid]&page=$data[current_page]'><span class='icon_delete'></span><input type='hidden' value='$item[sold]'></a></td>";
             echo "<td><input type='checkbox' /></td>";
           echo "</tr>";
 

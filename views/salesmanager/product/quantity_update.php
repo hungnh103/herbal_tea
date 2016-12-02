@@ -8,7 +8,8 @@ loadview("salesmanager/nav_bar");
       if($(this).val() != ""){
         $("#decrease_product").attr("disabled", "disabled");
       }else{
-        $("#decrease_product").removeAttr("disabled");
+        if ($("#update_quantity_current_amount").val() > 0)
+          $("#decrease_product").removeAttr("disabled");
       }
     });
 
@@ -17,6 +18,13 @@ loadview("salesmanager/nav_bar");
         $("#increase_product").attr("disabled", "disabled");
       }else{
         $("#increase_product").removeAttr("disabled");
+      }
+    });
+
+    $("input[type='submit']").click(function(){
+      if (($("#decrease_product").val() != "") && (parseInt($("#decrease_product").val()) > parseInt($("#update_quantity_current_amount").val()))) {
+        alert("Số lượng bớt đi không được lớn hơn số lượng hiện có");
+        return false;
       }
     });
 
@@ -35,7 +43,10 @@ loadview("salesmanager/nav_bar");
     }
     ?>
   </div>
-  <form action="index.php?controller=salesmanager&resources=product&action=quantity_update&pid=<?php echo $data['data']['pid']; ?>" method="post">
+  <?php
+  echo "<form action='index.php?controller=salesmanager&resources=product&action=quantity_update&pid=".$data['data']['pid']."&page=$data[current_page]' method='post'>";
+  ?>
+  <form action="index.php?controller=salesmanager&resources=product&action=quantity_update&pid=<?php echo $data['data']['pid']; ?>&page=<?php  ?>" method="post">
     <table>
       <tr>
         <td>Tên sản phẩm</td>
@@ -44,6 +55,9 @@ loadview("salesmanager/nav_bar");
       <tr>
         <td>Số lượng hiện có</td>
         <td style="color: brown; font-weight: bold;"><?php echo number_format($data['data']['quantity']); ?></td>
+        <?php
+        echo "<input type='hidden' id='update_quantity_current_amount' value='".$data['data']['quantity']."'>";
+        ?>
       </tr>
       <tr>
         <td>Bạn muốn thêm</td>
@@ -51,7 +65,7 @@ loadview("salesmanager/nav_bar");
       </tr>
       <tr>
         <td>hoặc bớt</td>
-        <td><input type="text" name="subtract_quantity" class="form-control" id="decrease_product" /> <span>sản phẩm</span></td>
+        <td><input type="text" name="subtract_quantity" class="form-control" id="decrease_product" <?php if ($data['data']['quantity'] == 0) echo "disabled='disabled'"; ?> /> <span>sản phẩm</span></td>
       </tr>
       <tr>
         <td></td>
