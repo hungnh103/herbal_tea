@@ -3,6 +3,9 @@ loadview("layouts/simple_header");
 loadview("salesmanager/nav_bar");
 ?>
 <div id="add_edit_product_interface">
+  <?php
+    echo "<form action='index.php?controller=salesmanager&resources=product&action=edit&pid=".$data['product']['pid']."&page=$data[current_page]' method='post' enctype='multipart/form-data'>";
+  ?>
   <form action="index.php?controller=salesmanager&resources=product&action=edit&pid=<?php echo $data['product']['pid']; ?>" method="post" enctype="multipart/form-data">
     <table>
       <tr>

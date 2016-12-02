@@ -1,6 +1,7 @@
 <?php
 $pid = $_GET['pid'];
 $data = "";
+$data['current_page'] = $_GET['page'];
 $mproduct = new Model_Product;
 $meffect = new Model_Effect;
 $meffect->select("oeid, content");
@@ -61,7 +62,7 @@ if(isset($_POST['ok'])){
       }
       $mproduct->where("pid = '$pid'");
       $mproduct->updateProduct($input_data);
-      redirect("index.php?controller=salesmanager&resources=product&action=index");
+      redirect("index.php?controller=salesmanager&resources=product&page=$data[current_page]");
     }else{
       $data['error'][] = "TRÙNG TÊN với sản phẩm khác";
     }
