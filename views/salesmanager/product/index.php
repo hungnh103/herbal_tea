@@ -94,13 +94,13 @@ loadview("salesmanager/nav_bar");
     </thead>
     <tbody>
       <?php
-      if(empty($data)){
+      if(empty($data['product'])){
         echo "<tr>";
             echo "<td colspan='10'>Chưa có sản phẩm nào</td>";
         echo "</tr>";
       }else{
-        $stt = 1;
-        foreach($data as $item){
+        $stt = ($data['current_page'] - 1) * 10 + 1;
+        foreach($data['product'] as $item){
           echo "<tr>";
             echo "<td>$stt</td>";
             echo "<td>$item[name]</td>";
@@ -135,6 +135,46 @@ loadview("salesmanager/nav_bar");
       ?>
     </tbody>
   </table>
+
+  <nav aria-label="Page navigation" style="position: relative; height: 77px;">
+    <ul class="pagination" style="position: absolute; right: 0px; bottom: 0px;">
+      <?php
+      if ($data['current_page'] == 1) {
+        echo "<li class='disabled'>";
+            echo "<span aria-hidden='true'>&laquo;</span>";
+        echo "</li>";
+      } else {
+        $prev = $data['current_page'] - 1;
+        echo "<li>";
+          echo "<a href='index.php?controller=salesmanager&resources=product&page=$prev' aria-label='Previous'>";
+            echo "<span aria-hidden='true'>&laquo;</span>";
+          echo "</a>";
+        echo "</li>";
+      }
+
+      for ($i = 1; $i <= $data['page']; $i++) {
+        if ($i == $data['current_page']) {
+          echo "<li class='active'><a href='javascript: void(0)'>$i</a></li>";
+        } else {
+          echo "<li><a href='index.php?controller=salesmanager&resources=product&page=$i'>$i</a></li>";
+        }
+      }
+
+      if ($data['current_page'] == $data['page']) {
+        echo "<li class='disabled'>";
+            echo "<span aria-hidden='true'>&raquo;</span>";
+        echo "</li>";
+      } else {
+        $next = $data['current_page'] + 1;
+        echo "<li>";
+          echo "<a href='index.php?controller=salesmanager&resources=product&page=$next' aria-label='Next'>";
+            echo "<span aria-hidden='true'>&raquo;</span>";
+          echo "</a>";
+        echo "</li>";
+      }
+      ?>
+    </ul>
+  </nav>
 </div>
 
 <?php
