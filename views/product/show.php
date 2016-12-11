@@ -14,8 +14,28 @@ loadview("layouts/header");
     }
   }
 
-  function getAmount(){
-    document.getElementById("hidden_amount").value = document.getElementById("amount").value;
+  function getAmount(remain){
+    var pattern = /^[0-9]+$/;
+    var current_amount = document.getElementById("amount").value;
+    if (pattern.test(current_amount) == false) {
+      alert("Số lượng đặt mua không hợp lệ");
+      document.getElementById("amount").value = 1;
+      return false;
+    } else {
+      if (current_amount == 0) {
+        alert("Vui lòng đặt mua ít nhất 1 sản phẩm");
+        document.getElementById("amount").value = 1;
+        return false;
+      } else {
+        if (current_amount > remain) {
+          alert("Số lượng sản phẩm hiện có không đủ đáp ứng");
+          document.getElementById("amount").value = remain;
+          return false;
+        } else {
+          document.getElementById("hidden_amount").value = current_amount;
+        }
+      }
+    }
   }
 </script>
 
@@ -92,9 +112,9 @@ loadview("layouts/header");
               echo "<input type='hidden' name='price' value='".$data['product']['price']."' />";
               echo "<input type='hidden' name='image' value='".$data['product']['image']."' />";
               if($data['product']['quantity'] == 0){
-                echo "<input type='submit' name='ok' value='Thêm vào giỏ hàng' onclick='getAmount();' class='btn btn-danger' disabled='disabled' />";
+                echo "<input type='submit' name='ok' value='Thêm vào giỏ hàng' class='btn btn-danger' disabled='disabled' />";
               }else{
-                echo "<input type='submit' name='ok' value='Thêm vào giỏ hàng' onclick='getAmount();' class='btn btn-danger' />";
+                echo "<input type='submit' name='ok' value='Thêm vào giỏ hàng' onclick='return getAmount(".$data['product']['quantity'].");' class='btn btn-danger' />";
               }
             echo "</form>";
           echo "</td>";

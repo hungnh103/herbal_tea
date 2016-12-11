@@ -22,9 +22,28 @@ loadview("salesmanager/nav_bar");
     });
 
     $("input[type='submit']").click(function(){
-      if (($("#decrease_product").val() != "") && (parseInt($("#decrease_product").val()) > parseInt($("#update_quantity_current_amount").val()))) {
-        alert("Số lượng bớt đi không được lớn hơn số lượng hiện có");
-        return false;
+      var pattern = /^[0-9]+$/;
+      if ($("#increase_product").val() != "") {
+        var change_amount = $("#increase_product").val();
+        if ((pattern.test(change_amount) == false) || (change_amount == 0)) {
+          alert("Số lượng nhập vào không hợp lệ");
+          $("#increase_product").val("");
+          $("#decrease_product").removeAttr("disabled");
+          return false;
+        }
+      } else {
+        var change_amount = $("#decrease_product").val();
+        if ((pattern.test(change_amount) == false) || (change_amount == 0)) {
+          alert("Số lượng nhập vào không hợp lệ");
+          $("#decrease_product").val("");
+          $("#increase_product").removeAttr("disabled");
+          return false;
+        } else {
+          if (parseInt(change_amount) > parseInt($("#update_quantity_current_amount").val())) {
+            alert("Số lượng bớt đi không được lớn hơn số lượng hiện có");
+            return false;
+          }
+        }
       }
     });
 
