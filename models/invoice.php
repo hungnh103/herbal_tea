@@ -59,4 +59,10 @@ class Model_Invoice extends Model{
     $update_data = array("status" => $status['status']);
     $this->updateInvoice($update_data);
   }
+
+  public function countInvoiceByUid($uid) {
+    $this->where("uid = '$uid'");
+    $this->getData($this->_table);
+    return $this->num_rows();
+  }
 }
