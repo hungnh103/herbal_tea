@@ -76,4 +76,14 @@ class Model_Product extends Model{
     $this->getData($this->_table);
     return $this->fetchAll();
   }
+
+  public function countProductsType() {
+    $this->getData($this->_table);
+    return $this->num_rows();
+  }
+
+  public function statProduct() {
+    $this->getData($this->_table);
+    return $this->fetch();
+  }
 }

@@ -400,3 +400,16 @@
   padding: 5px;
   text-align: left;
 }
+
+/***********************************/
+/********* VIEW STATISTICS *********/
+/***********************************/
+#view_statistics {
+  font-size: 12pt;
+}
+
+#view_statistics .stat_accounts table, #view_statistics .stat_products table {
+  text-align: left;
+  margin: 0;
+}
+
