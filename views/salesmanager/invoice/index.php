@@ -9,7 +9,7 @@ loadview("salesmanager/nav_bar");
 </script>
 
 <div id="manage_invoices">
-  <div id="all_invoices">
+  <div id="all_invoices" style="min-height: 364px;">
     <table class="table table-hover table-bordered">
       <thead>
         <tr>
@@ -25,9 +25,9 @@ loadview("salesmanager/nav_bar");
       </thead>
       <tbody>
       <?php
-      if (!empty($data)) {
-        $stt = 1;
-        foreach ($data as $item) {
+      if (!empty($data['invoice'])) {
+        $stt = ($data['current_page'] - 1) * 10 + 1;
+        foreach ($data['invoice'] as $item) {
           echo "<tr>";
             echo "<td>$stt</td>";
             echo "<td><a href='index.php?controller=salesmanager&resources=invoice&action=show&iid=$item[iid]' class='view_invoice_detail'>$item[iid]</a></td>";
@@ -58,11 +58,11 @@ loadview("salesmanager/nav_bar");
                 break;
               case "2":
                 echo "<td><span class='ordered'>đã đặt hàng</span></td>";
-                echo "<td><a href='index.php?controller=salesmanager&resources=invoice&action=edit&iid=$item[iid]' onclick='return update_status();'><span class='icon_update'></span></a></td>";
+                echo "<td><a href='index.php?controller=salesmanager&resources=invoice&action=edit&iid=$item[iid]&page=$data[current_page]' onclick='return update_status();'><span class='icon_update'></span></a></td>";
                 break;
               case "3":
                 echo "<td><span class='in_progressing'>đang xử lý</span></td>";
-                echo "<td><a href='index.php?controller=salesmanager&resources=invoice&action=edit&iid=$item[iid]' onclick='return update_status();'><span class='icon_update'></span></a></td>";
+                echo "<td><a href='index.php?controller=salesmanager&resources=invoice&action=edit&iid=$item[iid]&page=$data[current_page]' onclick='return update_status();'><span class='icon_update'></span></a></td>";
                 break;
               case "4":
                 echo "<td><span class='success_delivery'>giao hàng thành công</span></td>";
@@ -82,6 +82,46 @@ loadview("salesmanager/nav_bar");
       </tbody>
     </table>
   </div>
+
+  <nav aria-label="Page navigation" style="position: relative; height: 50px;">
+    <ul class="pagination" style="position: absolute; right: 0px; bottom: 0px;">
+      <?php
+      if ($data['current_page'] == 1) {
+        echo "<li class='disabled'>";
+            echo "<span aria-hidden='true'>&laquo;</span>";
+        echo "</li>";
+      } else {
+        $prev = $data['current_page'] - 1;
+        echo "<li>";
+          echo "<a href='index.php?controller=salesmanager&resources=invoice&page=$prev' aria-label='Previous'>";
+            echo "<span aria-hidden='true'>&laquo;</span>";
+          echo "</a>";
+        echo "</li>";
+      }
+
+      for ($i = 1; $i <= $data['page']; $i++) {
+        if ($i == $data['current_page']) {
+          echo "<li class='active'><a href='javascript: void(0)'>$i</a></li>";
+        } else {
+          echo "<li><a href='index.php?controller=salesmanager&resources=invoice&page=$i'>$i</a></li>";
+        }
+      }
+
+      if ($data['current_page'] == $data['page']) {
+        echo "<li class='disabled'>";
+            echo "<span aria-hidden='true'>&raquo;</span>";
+        echo "</li>";
+      } else {
+        $next = $data['current_page'] + 1;
+        echo "<li>";
+          echo "<a href='index.php?controller=salesmanager&resources=invoice&page=$next' aria-label='Next'>";
+            echo "<span aria-hidden='true'>&raquo;</span>";
+          echo "</a>";
+        echo "</li>";
+      }
+      ?>
+    </ul>
+  </nav>
 </div>
 
 <?php

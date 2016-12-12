@@ -15,7 +15,7 @@ if(isset($_SESSION['level'])){
         $data['detail'][$i]['check'] = $remain_amount['quantity'];
         $_SESSION['is_remain']++;
       } else {
-        $data['detail'][$i]['check'] = 0;
+        $data['detail'][$i]['check'] = -1;
       }
       $i++;
     }
