@@ -6,6 +6,8 @@ if(isset($_POST['ok'])){
     $data['error'][] = "Email không được để trống";
   }else{
     $email = $_POST['txtemail'];
+    // $email = addslashes($_POST['txtemail']); // xu ly o php
+    // $email = mysql_escape_string($_POST['txtemail']); // xu ly o php
   }
 
   if(empty($_POST['txtpass'])){
@@ -17,6 +19,7 @@ if(isset($_POST['ok'])){
   if($email && $pass){
     $pass = md5($pass);
     $muser = new Model_User;
+    $email = mysql_real_escape_string($email); // xu ly o mysql, sau khi da ket noi db
     $arr = array("email =" => $email, "password =" => $pass);
     $muser->where($arr);
     if($muser->checkUser() == false){
