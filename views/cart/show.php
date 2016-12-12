@@ -68,8 +68,12 @@ loadview("layouts/header");
                 echo "<td class='name_and_delete'>";
                   echo "<h2><a href='index.php?controller=product&action=show&pid=$item[pid]'>$item[name]</a></h2>";
                   echo "<a href='index.php?controller=cart&action=destroy_product&idid=$item[idid]' onclick='return check_delete_product();'><span class='icon_delete'>Xoá</span></a><br>";
-                  if ($item['check'] != 0) {
-                    echo "<p style='color: #fff; background: brown; padding: 5px; margin-top: 10px; border-radius: 5px; display: inline-block;'>Chỉ còn $item[check] sản phẩm</p>";
+                  if ($item['check'] != -1) {
+                    if ($item['check'] > 0) {
+                      echo "<p style='color: #fff; background: brown; padding: 5px; margin-top: 10px; border-radius: 5px; display: inline-block;'>Chỉ còn $item[check] sản phẩm</p>";
+                    } else {
+                      echo "<p style='color: #fff; background: #B8860B; padding: 5px; margin-top: 10px; border-radius: 5px; display: inline-block;'>Hết hàng</p>";
+                    }
                   }
                 echo "</td>";
                 echo "<td class='net_price'>".number_format($item['price'])." ₫</td>";
