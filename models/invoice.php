@@ -65,4 +65,22 @@ class Model_Invoice extends Model{
     $this->getData($this->_table);
     return $this->num_rows();
   }
+
+  public function statInvoice() {
+    $this->getData($this->_table);
+    return $this->fetch();
+  }
+
+  public function currentMonthTotal() {
+    $year = date("Y");
+    $month = date("m");
+    $condition = array(
+        "year(order_date) =" => $year,
+        "month(order_date) =" => $month,
+        "status =" => "4"
+      );
+    $this->where($condition);
+    $this->getData($this->_table);
+    return $this->fetch();
+  }
 }

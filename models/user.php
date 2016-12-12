@@ -33,4 +33,9 @@ class Model_User extends Model{
     $this->getData($this->_table);
     return $this->fetch();
   }
+
+  public function countUser() {
+    $this->getData($this->_table);
+    return $this->num_rows();
+  }
 }
