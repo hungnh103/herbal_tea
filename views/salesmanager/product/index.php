@@ -69,7 +69,7 @@ loadview("salesmanager/nav_bar");
     });
   </script>
 
-  <form id="import_product" action="import.php" method="post" enctype="multipart/form-data">
+  <form id="import_product" action="models/import.php" method="post" enctype="multipart/form-data">
     <table>
       <tr>
         <td><i>Nhập liệu từ file Excel</i></td>
@@ -82,11 +82,9 @@ loadview("salesmanager/nav_bar");
 
 <div class="clr"></div>
 
-
-
 <div id="product_list">
   <a href="index.php?controller=salesmanager&resources=product&action=new" class="btn btn-success">Thêm</a>
-  <a href="export.php" class="btn btn-danger" style="margin-left: 30px;">Xuất dữ liệu ra file Excel</a>
+  <a href="models/export.php" class="btn btn-danger" style="margin-left: 30px;">Xuất dữ liệu ra file Excel</a>
   <table class="table table-hover table-bordered">
     <thead>
       <tr>
