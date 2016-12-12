@@ -27,4 +27,10 @@ class Model_Remark extends Model{
     $this->getData($this->_table);
     return $this->fetch();
   }
+
+  public function countRemarkByUid($uid) {
+    $this->where("uid = '$uid'");
+    $this->getData($this->_table);
+    return $this->num_rows();
+  }
 }
