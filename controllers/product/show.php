@@ -30,7 +30,7 @@ if(isset($_POST['ok'])) {
   if(empty($_POST['content'])){
     $data['error'][] = "Vui lòng viết bình luận về sản phẩm";
   } else {
-    $content = $_POST['content'];
+    $content = htmlspecialchars($_POST['content']);
   }
 
   if($score && $content){
