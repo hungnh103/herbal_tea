@@ -118,7 +118,7 @@
           <li><a href="index.php?controller=static_page&action=guide">Hướng dẫn mua hàng</a></li>
           <li><a href="index.php?controller=news">Tin tức</a></li>
           <li><a href="index.php?controller=static_page&action=agency_register">Đăng ký làm đại lý</a></li>
-          <li><a href="https://www.facebook.com/quynhphuongtrathaoduoc/" target="_blank">Fanpage</a></li>
+          <li><a href="https://www.facebook.com/QuynhPhuongHerbalTea/" target="_blank">Fanpage</a></li>
           <li><a href="index.php?controller=static_page&action=intro">Giới thiệu</a></li>
         </ul>
       </div>

@@ -83,4 +83,10 @@ class Model_Invoice extends Model{
     $this->getData($this->_table);
     return $this->fetch();
   }
+
+  public function getTotal() {
+    $this->select("total");
+    $this->getData($this->_table);
+    return $this->fetch();
+  }
 }
