@@ -1,5 +1,5 @@
 <?php
-loadview("layouts/header");
+loadview("layouts/header", $data);
 ?>
 
 <div id="cart_shipping" style="min-height: 257px;">

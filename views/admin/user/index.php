@@ -1,5 +1,5 @@
 <?php
-loadview("layouts/simple_header");
+loadview("layouts/simple_header", $data);
 ?>
 
 <script type="text/javascript" src="assets/javascripts/admin.js"></script>

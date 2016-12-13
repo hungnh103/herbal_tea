@@ -99,4 +99,5 @@ if(isset($_POST['ok'])){
   }
 }
 
+$data['title_tag'] = "Chỉnh sửa sản phẩm";
 loadview("salesmanager/product/edit", $data);

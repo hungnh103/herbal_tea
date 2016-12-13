@@ -17,5 +17,5 @@ if (isset($_GET['page'])) {
 }
 
 $data['invoice'] = $minvoice->listInvoice();
-
+$data['title_tag'] = "Danh sách đơn hàng";
 loadview("salesmanager/invoice/index", $data);

@@ -17,4 +17,5 @@ if (isset($_GET['page'])) {
 
 $data['product'] = $mproduct->listProduct();
 
+$data['title_tag']  = "Kho hàng";
 loadview("salesmanager/product/index", $data);

@@ -35,4 +35,5 @@ if(isset($_POST['ok'])) {
   }
 }
 
+$data['title_tag'] = "Thêm bài viết mới";
 loadview("salesmanager/news/new", $data);

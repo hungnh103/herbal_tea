@@ -3,7 +3,15 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Quỳnh Phương Herbal Tea</title>
+    <title>
+      <?php
+        if (!empty($data['title_tag'])) {
+          echo "$data[title_tag] | Quỳnh Phương Herbal Tea";
+        } else {
+          echo "Quỳnh Phương Herbal Tea";
+        }
+      ?>
+    </title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
     <link rel="shortcut icon" type="image/x-icon" href="assets/images/system/favicon.ico" />
     <link rel="stylesheet" type="text/css" href="assets/stylesheets/bootstrap.min.css" />

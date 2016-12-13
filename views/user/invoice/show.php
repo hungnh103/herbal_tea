@@ -1,5 +1,5 @@
 <?php
-loadview("layouts/header");
+loadview("layouts/header", $data);
 ?>
 
 <div id="view_invoice_detail" style="min-height: 257px;">

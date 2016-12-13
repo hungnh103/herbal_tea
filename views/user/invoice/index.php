@@ -1,5 +1,5 @@
 <?php
-loadview("layouts/header");
+loadview("layouts/header", $data);
 ?>
 
 <div id="my_invoices_list" style="min-height: 242px;">
@@ -16,8 +16,8 @@ loadview("layouts/header");
     </thead>
     <tbody>
     <?php
-    if(!empty($data)) {
-      foreach ($data as $item) {
+    if(!empty($data['invoices'])) {
+      foreach ($data['invoices'] as $item) {
         echo "<tr>";
           echo "<td><a href='index.php?controller=user&resources=invoice&action=show&iid=$item[iid]'>$item[iid]</a></td>";
           if (empty($item['order_date'])) {

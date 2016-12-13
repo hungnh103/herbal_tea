@@ -25,4 +25,5 @@ $minvoice->select("sum(total)");
 $data['avenue']['total'] = $minvoice->statInvoice();
 $data['avenue']['current_month_total'] = $minvoice->currentMonthTotal();
 
+$data['title_tag'] = "Quản lý kinh doanh";
 loadview("salesmanager/mainpage", $data);

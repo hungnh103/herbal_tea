@@ -75,4 +75,5 @@ if(isset($_POST['ok'])){
   }
 }
 
+$data['title_tag'] = "Tài khoản";
 loadview("user/account", $data);

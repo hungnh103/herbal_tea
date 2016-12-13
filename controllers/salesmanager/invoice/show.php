@@ -24,4 +24,5 @@ $mprovince = new Model_Province;
 $data['prov_info'] = $mprovince->getProvinceById($data['dist_info']['provid']);
 $data['addr']['prov_name'] = $data['prov_info']['name'];
 
+$data['title_tag'] = "Xem chi tiết đơn hàng";
 loadview("salesmanager/invoice/show", $data);

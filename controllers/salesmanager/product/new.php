@@ -65,4 +65,5 @@ if(isset($_POST['ok'])){
   }
 }
 
+$data['title_tag'] = "Thêm sản phẩm";
 loadview("salesmanager/product/new", $data);

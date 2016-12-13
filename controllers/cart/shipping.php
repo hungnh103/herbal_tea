@@ -18,4 +18,5 @@ if($data['addr'] != "") {
   }
 }
 
+$data['title_tag'] = "Chọn địa chỉ giao hàng";
 loadview("cart/shipping", $data);

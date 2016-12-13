@@ -54,4 +54,5 @@ if(isset($_POST['ok'])){
   }
 }
 
+$data['title_tag'] = "Đăng nhập";
 loadview("sessions/new", $data);

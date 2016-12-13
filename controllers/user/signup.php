@@ -39,4 +39,5 @@ if(isset($_POST['ok'])){
   }
 }
 
+$data['title_tag'] = "Đăng ký";
 loadview("static_pages/signup", $data);

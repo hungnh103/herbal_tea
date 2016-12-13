@@ -1,5 +1,5 @@
 <?php
-loadview("layouts/header");
+loadview("layouts/header", $data);
 ?>
 <script type="text/javascript">
   $(document).ready(function(){
@@ -11,12 +11,12 @@ loadview("layouts/header");
   <div id="aaa_left">
     <table>
     <?php
-    if (empty($data)) {
+    if (empty($data['qanda'])) {
       echo "<tr>";
         echo "<td>Chưa có câu hỏi nào</td>";
       echo "</tr>";
     } else {
-      foreach ($data as $item) {
+      foreach ($data['qanda'] as $item) {
         echo "<tr>";
           echo "<td>";
             echo "<p><span style='font-weight: bold;'>Hỏi:</span> $item[content]</p>";

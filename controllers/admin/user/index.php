@@ -35,4 +35,5 @@ if (!empty($data['user'])) {
   }
 }
 
+$data['title_tag'] = "Quản lý thành viên";
 loadview("admin/user/index", $data);

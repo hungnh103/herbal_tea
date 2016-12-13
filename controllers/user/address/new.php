@@ -52,4 +52,5 @@ if(isset($_POST['ok'])){
   }
 }
 
+$data['title_tag'] = "Tạo địa chỉ mới";
 loadview("user/address/new", $data);
