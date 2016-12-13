@@ -56,16 +56,48 @@ foreach ($arraydata as $item) {
     $sql = "INSERT INTO products(name, price, quantity, packing_method, description) VALUES('$item[1]', '$item[2]', '$item[3]', '$item[4]', '$item[5]')";
   } else {
     // chinh sua san pham
-    $sql = "SELECT quantity FROM products WHERE pid='$item[0]'";
+    $sql = "SELECT price, quantity FROM products WHERE pid='$item[0]'";
     $query = mysql_query($sql);
     $data_pr = mysql_fetch_assoc($query);
-    $diff = $item[3] - $data_pr['quantity'];
-    $key = $item[10];
-    $oe_change[$key] += $diff;
-    $sql = "UPDATE products SET name='$item[1]', price='$item[2]', quantity='$item[3]', packing_method='$item[4]', description='$item[5]' WHERE pid='$item[0]'";
+    $diff_quantity = $item[3] - $data_pr['quantity'];
+    $diff_price = $item[2] - $data_pr['price'];
+    if ($diff_quantity != 0) {
+      $key = $item[10];
+      $oe_change[$key] += $diff_quantity;
+      if ($diff_price != 0) {
+        // cap nhat bang invoices va bang invoice_details
+        $sql = "SELECT invoices.iid, idid, total, price, quantity FROM invoices INNER JOIN invoice_details ON invoices.iid = invoice_details.iid WHERE status='1' AND pid='$item[0]'";
+        $query = mysql_query($sql); // co the co nhieu ban ghi
+        while ($update_cart = mysql_fetch_assoc($query)) {
+          $sql = "UPDATE invoice_details SET price='$item[2]' WHERE idid='$update_cart[idid]'";
+          mysql_query($sql);
+          $new_total = $update_cart['total'] + $diff_price * $update_cart['quantity'];
+          $sql = "UPDATE invoices SET total='$new_total' WHERE iid='$update_cart[iid]'";
+          mysql_query($sql);
+        }
+        $sql = "UPDATE products SET name='$item[1]', price='$item[2]', quantity='$item[3]', packing_method='$item[4]', description='$item[5]' WHERE pid='$item[0]'";
+      } else {
+        $sql = "UPDATE products SET name='$item[1]', quantity='$item[3]', packing_method='$item[4]', description='$item[5]' WHERE pid='$item[0]'";
+      }
+    } else {
+      if ($diff_price != 0) {
+        // cap nhat bang invoices va bang invoice_details
+        $sql = "SELECT invoices.iid, idid, total, price, quantity FROM invoices INNER JOIN invoice_details ON invoices.iid = invoice_details.iid WHERE status='1' AND pid='$item[0]'";
+        $query = mysql_query($sql); // co the co nhieu ban ghi
+        while ($update_cart = mysql_fetch_assoc($query)) {
+          $sql = "UPDATE invoice_details SET price='$item[2]' WHERE idid='$update_cart[idid]'";
+          mysql_query($sql);
+          $new_total = $update_cart['total'] + $diff_price * $update_cart['quantity'];
+          $sql = "UPDATE invoices SET total='$new_total' WHERE iid='$update_cart[iid]'";
+          mysql_query($sql);
+        }
+        $sql = "UPDATE products SET name='$item[1]', price='$item[2]', packing_method='$item[4]', description='$item[5]' WHERE pid='$item[0]'";
+      } else {
+        $sql = "UPDATE products SET name='$item[1]', packing_method='$item[4]', description='$item[5]' WHERE pid='$item[0]'";
+      }
+    }
   }
   mysql_query($sql);
-
 }
 
 // update outstanding_effects table

@@ -38,4 +38,10 @@ class Model_InvoiceDetail extends Model{
     $this->where("idid = '$idid'");
     $this->delete($this->_table);
   }
+
+  public function getQuantity() {
+    $this->select("quantity");
+    $this->getData($this->_table);
+    return $this->fetch();
+  }
 }

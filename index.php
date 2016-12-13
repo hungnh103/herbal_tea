@@ -3,6 +3,16 @@ session_start();
 require("assets/config/database.php");
 require("assets/config/function.php");
 
+if (isset($_SESSION['level']) && ($_SESSION['level'] == 1)) {
+  if ($_SESSION['total'] > 0) {
+    $minvoice = new Model_Invoice;
+    $minvoice->where(array("uid =" => $_SESSION['uid'], "status =" => "1"));
+    $minvoice->select("total");
+    $current_total = $minvoice->getTotal();
+    $_SESSION['total'] = $current_total['total'];
+  }
+}
+
 if(isset($_GET['controller'])){
   switch($_GET['controller']){
     case "static_page": require("controllers/static_page.php"); break;

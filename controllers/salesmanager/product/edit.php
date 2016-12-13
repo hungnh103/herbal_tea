@@ -45,12 +45,40 @@ if(isset($_POST['ok'])){
                   );
     $mproduct->select("pid");
     if($mproduct->checkProduct($check_data) == true){
+      $mproduct->select("price");
+      $old_price = $mproduct->getProductById($pid);
+
       $input_data = array(
                       "name" => $name,
                       "packing_method" => $packing_method,
-                      "price" => $price,
                       "description" => $description
                     );
+
+      if ($old_price['price'] != $price) {
+        $input_data['price'] = $price;
+        $price_diff = $price - $old_price['price'];
+        // update invoices table and invoice_details table
+        $minvoice = new Model_Invoice;
+        $minvoice->select("iid, total");
+        $minvoice->where("status = '1'");
+        $invoices_data = $minvoice->listInvoice();
+
+        $minvoicedetail = new Model_InvoiceDetail;
+        $update_invoice_detail = array("price" => $price);
+        foreach ($invoices_data as $item) {
+          $minvoicedetail->where(array("iid =" => $item['iid'], "pid =" => $pid));
+          $product_quantity_in_cart =  $minvoicedetail->getQuantity();
+          if (!empty($product_quantity_in_cart)) {
+            $minvoicedetail->updateInvoiceDetail($update_invoice_detail);
+
+            $new_total = $item['total'] + $price_diff * $product_quantity_in_cart['quantity'];
+            $minvoice->where(array("iid =" => $item['iid'], "status =" => "1"));
+            $update_invoice = array("total" => $new_total);
+            $minvoice->updateInvoice($update_invoice);
+          }
+        }
+      }
+
       if($image != "none"){
         $input_data['image'] = $image;
         move_uploaded_file($_FILES['image']['tmp_name'], "assets/images/products/".$_FILES['image']['name']);
@@ -60,8 +88,10 @@ if(isset($_POST['ok'])){
         $input_data['oeid'] = $outstanding_effect;
         $meffect->changeAmountWhenEditProduct($data['product']['oeid'], $data['product']['quantity'], $outstanding_effect);
       }
+
       $mproduct->where("pid = '$pid'");
       $mproduct->updateProduct($input_data);
+
       redirect("index.php?controller=salesmanager&resources=product&page=$data[current_page]");
     }else{
       $data['error'][] = "TRÙNG TÊN với sản phẩm khác";

@@ -8,21 +8,21 @@ loadview("layouts/header");
 </script>
 
 <div id="info">
-  <div id="slider">
-    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-      <!-- Indicators -->
-      <ol class="carousel-indicators">
-        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-      </ol>
+  <?php
+  if (empty($data['news']) || count($data['news']) < 3) {
+    echo "<img src='https://api.fnkr.net/testimg/630x300/?text=slider here' alt=''>";
+  } else {
+    echo "<div id='slider'>";
+      echo "<div id='carousel-example-generic' class='carousel slide' data-ride='carousel'>";
+        // <!-- Indicators -->
+        echo "<ol class='carousel-indicators'>";
+          echo "<li data-target='#carousel-example-generic' data-slide-to='0' class='active'></li>";
+          echo "<li data-target='#carousel-example-generic' data-slide-to='1'></li>";
+          echo "<li data-target='#carousel-example-generic' data-slide-to='2'></li>";
+        echo "</ol>";
 
-      <!-- Wrapper for slides -->
-      <div class="carousel-inner" role="listbox">
-        <?php
-        if(empty($data['news'])) {
-          // lam gi do
-        } else {
+        // <!-- Wrapper for slides -->
+        echo "<div class='carousel-inner' role='listbox'>";
           foreach ($data['news'] as $item) {
             echo "<div class='item'>";
               echo "<a href='index.php?controller=news&action=show&nid=$item[nid]'><img src='assets/images/news/$item[poster]' style='width: 630px; height: 300px;'></a>";
@@ -31,22 +31,21 @@ loadview("layouts/header");
               echo "</div>";
             echo "</div>";
           }
-        }
-        ?>
-      </div>
+        echo "</div>";
 
-      <!-- Controls -->
-      <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
-    </div>
-
-  </div>
+        // <!-- Controls -->
+        echo "<a class='left carousel-control' href='#carousel-example-generic' role='button' data-slide='prev'>";
+          echo "<span class='glyphicon glyphicon-chevron-left' aria-hidden='true'></span>";
+          echo "<span class='sr-only'>Previous</span>";
+        echo "</a>";
+        echo "<a class='right carousel-control' href='#carousel-example-generic' role='button' data-slide='next'>";
+          echo "<span class='glyphicon glyphicon-chevron-right' aria-hidden='true'></span>";
+          echo "<span class='sr-only'>Next</span>";
+        echo "</a>";
+      echo "</div>";
+    echo "</div>";
+  }
+  ?>
   <!-- SLIDER -->
 
   <div id="ads">
