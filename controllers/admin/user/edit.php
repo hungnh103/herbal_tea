@@ -10,4 +10,4 @@ if($level == 1){
   $data = array("level" => "1");
 }
 $muser->updateUser($data);
-redirect("http://localhost/www/herbal_tea/index.php?controller=admin&resources=user&page=$current_page");
+redirect("admin/user/$current_page");

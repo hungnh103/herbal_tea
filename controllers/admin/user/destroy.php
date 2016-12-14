@@ -16,4 +16,4 @@ if (isset($_GET['uid'])) {
   }
 }
 
-redirect("http://localhost/www/herbal_tea/index.php?controller=admin&resources=user&page=$current_page");
+redirect("admin/user/$current_page");
