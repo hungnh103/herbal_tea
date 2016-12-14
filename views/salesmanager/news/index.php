@@ -1,5 +1,5 @@
 <?php
-loadview("layouts/simple_header");
+loadview("layouts/simple_header", $data);
 loadview("salesmanager/nav_bar");
 ?>
 <script type="text/javascript">
@@ -22,13 +22,13 @@ loadview("salesmanager/nav_bar");
     </thead>
     <tbody>
     <?php
-    if (empty($data)) {
+    if (empty($data['news'])) {
       echo "<tr>";
         echo "<td colspan='5'>Chưa có bài viết nào</td>";
       echo "</tr>";
     } else {
       $stt = 1;
-      foreach ($data as $item) {
+      foreach ($data['news'] as $item) {
         echo "<tr>";
           echo "<td>$stt</td>";
           $timestamp = strtotime($item['created_at']);

@@ -22,4 +22,5 @@ if(isset($_SESSION['level'])){
   }
 }
 
+$data['title_tag'] = "Giỏ hàng";
 loadview("cart/show", $data);

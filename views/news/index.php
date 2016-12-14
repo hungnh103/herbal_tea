@@ -1,5 +1,5 @@
 <?php
-loadview("layouts/header");
+loadview("layouts/header", $data);
 ?>
 <script type="text/javascript">
   $(document).ready(function(){
@@ -9,10 +9,10 @@ loadview("layouts/header");
 
 <div id="list_news" style="min-height: 252px;">
   <?php
-  if (empty($data)) {
+  if (empty($data['news'])) {
     echo "<p>Chưa có bài viết nào</p>";
   } else {
-    foreach ($data as $item) {
+    foreach ($data['news'] as $item) {
       echo "<div class='news_item'>";
         echo "<div class='poster'>";
           echo "<a href='index.php?controller=news&action=show&nid=$item[nid]'><img src='assets/images/news/$item[poster]' style='width: 210px; height: 100px;'></a>";

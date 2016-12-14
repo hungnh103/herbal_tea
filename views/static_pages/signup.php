@@ -1,10 +1,10 @@
 <?php
-loadview("layouts/header");
+loadview("layouts/header", $data);
 ?>
 <div>
   <form id="signup_form" action="index.php?controller=user&action=signup" method="post">
   <?php
-  if(!empty($data)){
+  if(!empty($data['error'])){
     echo "<div class='error'>";
         echo "<ul>";
         foreach($data['error'] as $err){

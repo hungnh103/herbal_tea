@@ -27,4 +27,6 @@ $minvoicedetail = new Model_InvoiceDetail;
 $minvoicedetail->select("name, price, quantity, pid");
 $minvoicedetail->order("idid", "DESC");
 $data['product'] = $minvoicedetail->listInvoiceDetail($iid);
+
+$data['title_tag'] = "Chi tiết đơn hàng thành viên";
 loadview("user/invoice/show", $data);

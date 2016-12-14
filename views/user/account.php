@@ -1,8 +1,8 @@
 <?php
 if($_SESSION['level'] == 1){
-  loadview("layouts/header");
+  loadview("layouts/header", $data);
 }else{
-  loadview("layouts/simple_header");
+  loadview("layouts/simple_header", $data);
 }
 
 if($_SESSION['level'] != 1){

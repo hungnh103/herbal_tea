@@ -21,4 +21,6 @@ if(isset($_POST['ok'])){
     }
   }
 }
+
+$data['title_tag'] = "Thêm công dụng mới";
 loadview("salesmanager/effect/new", $data);

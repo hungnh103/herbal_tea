@@ -1,16 +1,18 @@
 <?php
 $current_page = $_GET['page'];
 $muser = new Model_User;
+$maddressregister = new Model_AddressRegister;
 
 if (isset($_GET['uid'])) {
   $uid = $_GET['uid'];
   $muser->deleteUser($uid);
+  $maddressregister->deletedeleteAddressRegisterByUid($uid);
 } else {
   $data = $_GET['data'];
   $data = json_decode($data, true);
-  $muser = new Model_User;
   foreach ($data as $item) {
     $muser->deleteUser($item);
+    $maddressregister->deletedeleteAddressRegisterByUid($item);
   }
 }
 

@@ -47,4 +47,5 @@ if(isset($_POST['ok'])) {
   }
 }
 
+$data['title_tag'] = $data['product']['name'];
 loadview("product/show", $data);

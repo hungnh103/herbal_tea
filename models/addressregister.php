@@ -26,4 +26,9 @@ class Model_AddressRegister extends Model{
   public function updateAddressRegister($data){
     $this->update($this->_table, $data);
   }
+
+  public function deletedeleteAddressRegisterByUid($uid) {
+    $this->where("uid = '$uid'");
+    $this->delete($this->_table);
+  }
 }

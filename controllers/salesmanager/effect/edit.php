@@ -28,4 +28,5 @@ if(isset($_POST['ok'])){
   }
 }
 $data['data'] = $meffect->getEffectById($oeid);
+$data['title_tag'] = "Chỉnh sửa công dụng";
 loadview("salesmanager/effect/edit", $data);

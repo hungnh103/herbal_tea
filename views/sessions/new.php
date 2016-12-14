@@ -1,5 +1,5 @@
 <?php
-loadview("layouts/header");
+loadview("layouts/header", $data);
 ?>
 <div style="min-height: 257px;">
   <form id="login_form" action="index.php?controller=session&action=new" method="post">

@@ -39,4 +39,5 @@ if(isset($_POST['ok'])) {
   }
 }
 
+$data['title_tag'] = "Chỉnh sửa bài viết";
 loadview("salesmanager/news/edit", $data);

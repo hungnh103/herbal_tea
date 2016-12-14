@@ -1,5 +1,5 @@
 <?php
-loadview("layouts/header");
+loadview("layouts/header", $data);
 ?>
 <script type="text/javascript">
   $(document).ready(function(){

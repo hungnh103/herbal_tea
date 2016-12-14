@@ -27,4 +27,5 @@ if(isset($_POST['ok'])){
   }
 }
 
+$data['title_tag'] = "Cập nhật số lượng sản phẩm";
 loadview("salesmanager/product/quantity_update", $data);

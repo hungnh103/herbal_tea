@@ -2,6 +2,6 @@
 $data = "";
 $nid = $_GET['nid'];
 $mnews = new Model_News;
-$data = $mnews->getNewsByNid($nid);
-
+$data['news'] = $mnews->getNewsByNid($nid);
+$data['title_tag']  = $data['news']['title'];
 loadview("news/show", $data);

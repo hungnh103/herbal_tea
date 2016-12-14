@@ -75,4 +75,5 @@ if (isset($_POST['ok'])) {
   }
 }
 
+$data['title_tag'] = "Thanh toán";
 loadview("cart/payment", $data);

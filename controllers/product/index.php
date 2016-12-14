@@ -21,5 +21,5 @@ if(isset($_GET['page'])) {
   $data['current_page'] = 1;
 }
 $data['product'] = $mproduct->listProduct();
-
+$data['title_tag'] = "Trà thảo dược";
 loadview("product/index", $data);

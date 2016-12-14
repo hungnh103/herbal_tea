@@ -1,5 +1,5 @@
 <?php
-loadview("layouts/header");
+loadview("layouts/header", $data);
 ?>
 
 <div id="about_us" style="width: 1000px; margin: auto; min-height: 252px;">

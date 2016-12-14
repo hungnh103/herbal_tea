@@ -14,4 +14,5 @@ if(isset($_POST['ok'])) {
   redirect("index.php?controller=salesmanager&resources=ask_and_answer");
 }
 
+$data['title_tag'] = "Trả lời khách hàng";
 loadview("salesmanager/ask_and_answer/answer", $data);
