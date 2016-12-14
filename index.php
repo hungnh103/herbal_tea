@@ -1,5 +1,6 @@
 <?php
 session_start();
+define("BASEPATH", "http://localhost/www/herbal_tea/");
 require("assets/config/database.php");
 require("assets/config/function.php");
 

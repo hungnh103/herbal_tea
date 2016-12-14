@@ -4,5 +4,5 @@ if(isset($_POST['ok'])) {
   $input_data = array("content" => $question);
   $mquestion = new Model_Question;
   $mquestion->addQuestion($input_data);
-  redirect("index.php?controller=ask_and_answer");
+  redirect("ask_and_answer/index");
 }

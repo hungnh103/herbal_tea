@@ -1,0 +1,5 @@
+RewriteEngine on
+
+RewriteRule ^([a-z]+)/([a-z]+)$ index.php?controller=$1&action=$2 [L]
+RewriteRule ^([a-z]+)/([a-z]+)/([a-z]+)/uid/([0-9]+)$ index.php?controller=$1&resources=$2&action=$3&uid=$4 [L]
+RewriteRule ^([a-z]+)/([a-z]+)/uid/([0-9]+)$ index.php?controller=$1&action=$2&uid=$3 [L]

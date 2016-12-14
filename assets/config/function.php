@@ -10,8 +10,8 @@ function loadview($url, $data = ""){
   require("views/$url.php");
 }
 
-function redirect($url){
-  header("location:$url");
+function redirect($url = "BASEPATH"){
+  header("location:".BASEPATH."$url");
   exit();
 }
 

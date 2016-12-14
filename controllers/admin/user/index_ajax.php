@@ -36,12 +36,12 @@ $data = $muser->listUser();
         echo "<td>$item[email]</td>";
         if($item['level'] == 1){
           echo "<td>Thường</td>";
-          echo "<td><a href='index.php?controller=admin/user&action=edit&uid=$item[uid]&level=$item[level]' onclick='return check_change_level();'><span class='icon_change_level'></span></td>";
-          echo "<td><a href='index.php?controller=admin/user&action=destroy&uid=$item[uid]' onclick='return check_delete();'><span class='icon_delete'></span></a></td>";
+          echo "<td><a href='".BASEPATH."admin/user/edit/$item[uid]/level=$item[level]' onclick='return check_change_level();'><span class='icon_change_level'></span></td>";
+          echo "<td><a href='".BASEPATH."admin/user/destroy/$item[uid]' onclick='return check_delete();'><span class='icon_delete'></span></a></td>";
           echo "<td><input type='checkbox'></td>";
         }elseif($item['level'] == 2){
           echo "<td style='color: blue; font-weight: bold;'>Quản lý bán hàng</td>";
-          echo "<td><a href='index.php?controller=admin/user&action=edit&uid=$item[uid]&level=$item[level]' onclick='return check_change_level();'><span class='icon_change_level'></span></td>";
+          echo "<td><a href='".BASEPATH."admin/user/edit/$item[uid]/$item[level]' onclick='return check_change_level();'><span class='icon_change_level'></span></td>";
           echo "<td>&nbsp;</td>";
           echo "<td>&nbsp;</td>";
         }else{

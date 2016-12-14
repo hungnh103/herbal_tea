@@ -8,6 +8,7 @@ if(isset($_GET['resources'])){
   if(isset($_GET['action'])){
     switch($_GET['action']){
       case "signup": require("controllers/user/signup.php"); break;
+      case "account": require("controllers/user/account.php"); break;
     }
   }else{
     require("controllers/user/account.php");
